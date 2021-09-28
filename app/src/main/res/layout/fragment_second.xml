@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    tools:context=".FirstFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="302dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:background="@color/appBackgroundBlue"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="270dp"
+                android:layout_height="22dp"
+                android:text="Your monthly limit"
+                android:textColor="@color/appTextColor"
+                android:fontFamily="@font/originalsurfer_regular"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/LimitAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="50dp"
+                android:gravity="center"
+                android:text="RS 30000 /-"
+                android:fontFamily="@font/originalsurfer_regular"
+                android:textColor="@color/appTextColor"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
+                android:background="@drawable/limitinput"
+                android:gravity="center"
+                android:orientation="horizontal"></LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/originalsurfer_regular"
+                android:text="ADD"></Button>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="302dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@color/appBackgroundBlue"
+            >
+            <TextView
+                android:layout_width="270dp"
+                android:layout_height="22dp"
+                android:text="This Month Expenses"
+                android:textColor="@color/appTextColor"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/originalsurfer_regular"/>
+
+            <TextView
+                android:fontFamily="@font/originalsurfer_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:textColor="@color/appTextColor"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:text="Rs 2590 /-"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
+                android:background="@drawable/limitinput"
+                android:gravity="center"
+                android:orientation="horizontal"></LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/originalsurfer_regular"
+                android:text="ADD"></Button>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="302dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@color/appBackgroundBlue">
+            <TextView
+                android:fontFamily="@font/originalsurfer_regular"
+                android:layout_width="270dp"
+                android:layout_height="22dp"
+                android:text="Upload Your Bills"
+                android:textColor="@color/appTextColor"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_marginTop="20dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+
+                android:layout_weight="1" />
+
+            <Button
+                android:fontFamily="@font/originalsurfer_regular"
+                android:id="@+id/camera_button_open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="30dp"
+                android:text="UPLOAD"></Button>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
+</ScrollView>

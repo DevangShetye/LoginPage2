@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appBackgroundBlue"
+    tools:context=".LimitActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="90dp"
+            android:text="@string/Get_Started_By"
+            android:textColor="@color/appTextColor"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/originalsurfer_regular"
+            />
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="80dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/message5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/Add_limit"
+            android:textColor="@color/appTextColor"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/originalsurfer_regular"
+            />
+        <EditText
+            android:id="@+id/MonthlyLimit"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:hint="Rs 30000 /-"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:textColor="@color/appAlternateTextcolor"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/originalsurfer_regular"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/limitinput"
+            android:gravity="center"
+            android:orientation="horizontal"></LinearLayout>
+        <Button
+            android:id="@+id/limitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="70dp"
+            android:background="@drawable/limitbox"
+            android:text="ENTER"
+            android:textStyle="bold"
+            android:fontFamily="@font/originalsurfer_regular"/>
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>

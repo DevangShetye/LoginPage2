@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name"></string>
+    <string name="otp_verification">OTP VERIFICATION</string>
+    <string name="please_enter_valid_phone_number">OTP will be sent to this number</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="Otp_Verifcation">OTP VERIFICATION</string>
+    <string name="Enter_Otp">Please Enter OTP sent to you</string>
+    <string name="No_Otp">Didn\'t Receive The OTP ? </string>
+    <string name="Resend_OTp">RESEND OTP </string>
+    <string name="Verify_Otp">VERIFY OTP </string>
+    <string name="Get_Started_By">Get Started By</string>
+    <string name="Add_limit">Add Your Monthly Limit ...</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

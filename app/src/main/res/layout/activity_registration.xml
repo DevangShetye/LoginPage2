@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appBackgroundBlue"
+    tools:context=".RegistrationActivity">
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:id="@+id/image_sendotp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/message6"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:textAlignment="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:text="EXPENSE  TRACKER"
+                android:fontFamily="@font/originalsurfer_regular"
+                android:textColor="@color/appTextColor"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:textSize="23dp"
+                />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="302dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@color/white">
+        <TextView
+            android:layout_width="270dp"
+            android:layout_height="22dp"
+            android:text="Sign in to your account"
+            android:textColor="@color/appMobileTextcolor"
+            android:fontFamily="@font/originalsurfer_regular"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"/>
+        <TextView
+            android:fontFamily="@font/originalsurfer_regular"
+            android:layout_width="270dp"
+            android:layout_height="22dp"
+            android:text="Enter Your Name :"
+            android:textColor="@color/appTextColor"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:layout_marginTop="28dp"
+
+            />
+        <EditText
+            android:id="@+id/input_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="50dp"
+            android:importantForAutofill="no"
+            android:gravity="left"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:inputType="text"
+            android:background="@null"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="50dp"
+
+            android:background="@drawable/limitinput"
+            android:gravity="center"
+            android:orientation="horizontal"></LinearLayout>
+        <TextView
+            android:layout_width="270dp"
+            android:layout_height="22dp"
+            android:text="Enter Your Email :"
+            android:textColor="@color/appTextColor"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/originalsurfer_regular"
+            />
+        <EditText
+            android:id="@+id/input_email"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="50dp"
+            android:importantForAutofill="no"
+            android:gravity="left"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:background="@null"
+            android:inputType="textEmailAddress"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="50dp"
+
+            android:background="@drawable/limitinput"
+            android:gravity="center"
+            android:orientation="horizontal"></LinearLayout>
+        <TextView
+            android:layout_width="270dp"
+            android:layout_height="22dp"
+            android:text="Enter Your Password :"
+            android:textColor="@color/appTextColor"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/originalsurfer_regular"
+
+            />
+        <EditText
+            android:id="@+id/input_password"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="50dp"
+            android:background="@null"
+            android:gravity="left"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="50dp"
+
+            android:background="@drawable/limitinput"
+            android:gravity="center"
+            android:orientation="horizontal"></LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/register_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/originalsurfer_regular"
+
+            android:text="REGISTER NOW"></Button>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="302dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/originalsurfer_regular"
+                android:text="Already have an account ?"
+                android:textColor="@color/alternateBackgroundBlue"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="50dp"
+                android:textSize="14dp"
+
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:text="login"
+
+                android:textColor="@color/appTextColor"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/originalsurfer_regular"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
