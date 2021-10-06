@@ -3,7 +3,7 @@
     package="com.example.loginpage">
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,10 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginPage">
         <activity
-            android:name=".CameraActivity"
+            android:name=".RegistrationActivity"
             android:exported="true" />
         <activity
-            android:name=".RegistrationActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +24,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".CameraActivity"
+            android:exported="true" />
         <activity
             android:name=".DashboardActivity"
             android:exported="true" />

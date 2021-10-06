@@ -73,7 +73,7 @@ public class SecondFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 Intent in=new Intent(getActivity(),CameraActivity.class);
-                in.putExtra("some","some name");
+                in.putExtra("some","Camera Activity");
                 startActivity(in);
             }
         });

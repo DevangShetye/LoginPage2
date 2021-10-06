@@ -86,8 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Please Check Internet Connection", Toast.LENGTH_SHORT).show();
                     }
                     //Toast.makeText(LoginActivity.this,"OTP VERIFIED",Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(getApplicationContext(),LimitActivity.class);
-                    startActivity(intent);
+
 
                 }else{
                     Toast.makeText(LoginActivity.this,"Enter All Numbers",Toast.LENGTH_SHORT).show();
