@@ -14,16 +14,18 @@
         android:layout_marginTop="90dp"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <LinearLayout
             android:layout_width="302dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
-            android:background="@color/appBackgroundBlue"
+            android:background="@drawable/limitbutton"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
             <TextView
                 android:layout_width="270dp"
@@ -76,7 +78,7 @@
             android:layout_marginEnd="50dp"
             android:gravity="center"
             android:orientation="vertical"
-            android:background="@color/appBackgroundBlue"
+            android:background="@drawable/limitbutton"
             >
             <TextView
                 android:layout_width="270dp"
@@ -124,7 +126,7 @@
             android:layout_marginEnd="50dp"
             android:gravity="center"
             android:orientation="vertical"
-            android:background="@color/appBackgroundBlue">
+            android:background="@drawable/limitbutton">
             <TextView
                 android:fontFamily="@font/originalsurfer_regular"
                 android:layout_width="270dp"
