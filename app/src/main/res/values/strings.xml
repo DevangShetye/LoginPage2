@@ -10,6 +10,13 @@
     <string name="Verify_Otp">VERIFY OTP </string>
     <string name="Get_Started_By">Get Started By</string>
     <string name="Add_limit">Add Your Monthly Limit ...</string>
+    <string name="Total_expense_amount">Enter Total Expense Amount ...</string>
+    <string name="Categories">Categories</string>
+    <string-array name="names">
+        <item>Food</item>
+        <item>Clothing</item>
+        <item>housing</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

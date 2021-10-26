@@ -61,12 +61,13 @@
                 android:orientation="horizontal"></LinearLayout>
 
             <Button
+                android:id="@+id/Firstbtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="30dp"
                 android:fontFamily="@font/originalsurfer_regular"
-                android:text="ADD"></Button>
+                android:text="Change"></Button>
 
         </LinearLayout>
 
@@ -111,12 +112,13 @@
                 android:gravity="center"
                 android:orientation="horizontal"></LinearLayout>
             <Button
+                android:id="@+id/viewexpense"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="30dp"
                 android:fontFamily="@font/originalsurfer_regular"
-                android:text="ADD"></Button>
+                android:text="VIEW "></Button>
         </LinearLayout>
         <LinearLayout
             android:layout_width="302dp"

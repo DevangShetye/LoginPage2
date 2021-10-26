@@ -11,9 +11,13 @@
 
 
     <LinearLayout
-        android:layout_width="384dp"
+        android:layout_width="340dp"
         android:layout_height="162dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@drawable/backgroundbox"
+
+
+        >
 
         <ImageView
             android:id="@+id/image_view"
@@ -23,39 +27,31 @@
             android:layout_marginTop="40dp" />
 
         <TextView
+            android:id="@+id/addressview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="40dp"
-            android:text="ABC colony Parel station"
+
             android:textAlignment="center"/>
 
-        <TextView
-            android:layout_width="132dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="-150dp"
-            android:layout_marginTop="80dp"
-            android:text="Mumbai Maharashtra"
-            android:textAlignment="center" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="70dp"
-            android:text="Rs 100/-"
-            android:textSize="25dp"
-            android:textStyle="bold" />
 
 
 
     </LinearLayout>
-    
+
     <Button
         android:id="@+id/open_camera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="500dp"
         android:text="OPEN CAM" />
+
+    <Button
+        android:id="@+id/button_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-100dp"
+        android:text="GET LOCATION" />
 
 </LinearLayout>
