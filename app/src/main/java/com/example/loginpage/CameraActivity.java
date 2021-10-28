@@ -30,6 +30,7 @@ import java.util.Locale;
 public class CameraActivity extends AppCompatActivity implements LocationListener {
     ImageView imageView;
     Button buttonOpen;
+    Button uploadCard;
     Button buttonlocation;
     TextView addressview;
     LocationManager locationManager;
@@ -42,6 +43,7 @@ public class CameraActivity extends AppCompatActivity implements LocationListene
         buttonOpen=findViewById(R.id.open_camera);
         buttonlocation=findViewById(R.id.button_location);
         addressview = findViewById(R.id.addressview);
+        uploadCard=findViewById(R.id.upload_card);
 
         //request permission
         if(ContextCompat.checkSelfPermission(CameraActivity.this, Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
@@ -56,6 +58,7 @@ public class CameraActivity extends AppCompatActivity implements LocationListene
                     Manifest.permission.ACCESS_FINE_LOCATION
             },100);
         }
+
         buttonOpen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,6 +73,16 @@ public class CameraActivity extends AppCompatActivity implements LocationListene
             @Override
             public void onClick(View view) {
                 getlocation();
+            }
+        });
+        uploadCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),SecondFragment.class);
+                Toast.makeText(CameraActivity.this,"Card Uploaded Successfully",Toast.LENGTH_SHORT).show();
+
+                startActivity(intent);
+
             }
         });
         Bundle bundle=getIntent().getExtras();

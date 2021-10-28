@@ -61,7 +61,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 if(!InputUserName.getText().toString().trim().isEmpty()){
                     if(!InputEmail.getText().toString().trim().isEmpty()){
                         if(!InputPassword.getText().toString().trim().isEmpty()){
-                            Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                            Intent intent=new Intent(getApplicationContext(),LoginPageActivity.class);
                             startActivity(intent);
                         }else{
                             Toast.makeText(RegistrationActivity.this,"Input Password",Toast.LENGTH_SHORT).show();

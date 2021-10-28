@@ -14,10 +14,7 @@
         android:layout_width="340dp"
         android:layout_height="162dp"
         android:orientation="horizontal"
-        android:background="@drawable/backgroundbox"
-
-
-        >
+        android:background="@drawable/backgroundbox">
 
         <ImageView
             android:id="@+id/image_view"
@@ -32,6 +29,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="40dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/originalsurfer_regular"
+            android:textSize="12dp"
+            android:textStyle="bold"
 
             android:textAlignment="center"/>
 
@@ -40,6 +41,11 @@
 
     </LinearLayout>
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    >
     <Button
         android:id="@+id/open_camera"
         android:layout_width="wrap_content"
@@ -51,7 +57,18 @@
         android:id="@+id/button_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-100dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="20dp"
         android:text="GET LOCATION" />
+
+    <Button
+        android:id="@+id/upload_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="10dp"
+        android:text="UPLOAD" />
+</LinearLayout>
+
 
 </LinearLayout>

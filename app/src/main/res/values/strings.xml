@@ -13,9 +13,12 @@
     <string name="Total_expense_amount">Enter Total Expense Amount ...</string>
     <string name="Categories">Categories</string>
     <string-array name="names">
-        <item>Food</item>
-        <item>Clothing</item>
-        <item>housing</item>
+        <item>Food and Dining</item>
+        <item>Electricity and Gas</item>
+        <item>Housing</item>
+        <item>Medical</item>
+        <item>Entertainment</item>
+
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
