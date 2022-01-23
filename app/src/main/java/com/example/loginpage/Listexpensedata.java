@@ -2,7 +2,7 @@ package com.example.loginpage;
 
 public class Listexpensedata {
     String item,date,id,notes;
-    int amount,month;
+    int amount,month,limitamount;
 
 
     public Listexpensedata() {

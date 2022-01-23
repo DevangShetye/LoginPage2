@@ -25,8 +25,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.joda.time.DateTime;
 import org.joda.time.Months;
@@ -38,7 +41,7 @@ import java.util.Calendar;
 
 public class ListExpenseActivity extends AppCompatActivity {
     private FloatingActionButton fabbutton;
-    private DatabaseReference budgetRef;
+    public DatabaseReference budgetRef;
     private FirebaseAuth mAuth;
     private ProgressDialog loader;
 
@@ -62,6 +65,25 @@ public class ListExpenseActivity extends AppCompatActivity {
         linearLayoutManager.setReverseLayout(true);
         recyclerview.setHasFixedSize(true);
         recyclerview.setLayoutManager(linearLayoutManager);
+
+        budgetRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int TotalAmount=0;
+
+                for(DataSnapshot snap: snapshot.getChildren()){
+                    Listexpensedata listexpensedata= snap.getValue(Listexpensedata.class);
+                    TotalAmount+=listexpensedata.getAmount();
+                    String SumTotal = String.valueOf("Total Expense : Rs"+TotalAmount);
+                    totalBudgetAmountTextView.setText(SumTotal);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
 
         fabbutton=findViewById(R.id.fabbutton);
@@ -151,14 +173,26 @@ public class ListExpenseActivity extends AppCompatActivity {
 
         FirebaseRecyclerAdapter<Listexpensedata,MyViewHolder>adapter=new FirebaseRecyclerAdapter<Listexpensedata, MyViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Listexpensedata model) {
-                holder.setItemAmount("Allocated amount Rs"+ model.getAmount());
-                holder.setitemDate("On:"+model.getDate());
-                holder.setItemName("Item Name"+model.getItem());
+            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Listexpensedata Listexpensedata ) {
+                holder.setItemAmount("Allocated amount Rs : "+ Listexpensedata.getAmount());
+                holder.setitemDate("On : "+Listexpensedata.getDate());
+                holder.setItemName("Item Name : "+Listexpensedata.getItem());
                 holder.notes.setVisibility(View.GONE);
-                switch (model.getItem()){
+                switch (Listexpensedata.getItem()){
                     case "Food and Dining":
-                        holder.itemImageView.setImageResource(R.drawable.message3);
+                        holder.itemImageView.setImageResource(R.drawable.food);
+                        break;
+                    case "Electricity and Gas":
+                        holder.itemImageView.setImageResource(R.drawable.electricityngas);
+                        break;
+                    case "Housing":
+                        holder.itemImageView.setImageResource(R.drawable.housing);
+                        break;
+                    case "Medical":
+                        holder.itemImageView.setImageResource(R.drawable.medicalpng);
+                        break;
+                    case "Entertainment":
+                        holder.itemImageView.setImageResource(R.drawable.entertainment);
                         break;
                 }
 
@@ -193,14 +227,17 @@ public class ListExpenseActivity extends AppCompatActivity {
 
         public void setItemName(String itemName){
             TextView item=mview.findViewById(R.id.item);
+            item.setText(itemName);
 
         }
         public void setItemAmount(String itemAmount){
             TextView amount=mview.findViewById(R.id.amount);
+            amount.setText(itemAmount);
 
         }
         public void setitemDate(String itemDate){
             TextView date=mview.findViewById(R.id.date);
+            date.setText(itemDate);
 
         }
 

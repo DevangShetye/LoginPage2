@@ -1,13 +1,14 @@
 package com.example.loginpage;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
@@ -17,31 +18,66 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class StatisticsActivity extends AppCompatActivity {
     Button GotoExpense;
+    public DatabaseReference budgetRef;
+    private FirebaseAuth mAuth;
     private PieChart pieChart;
-    float food= (float) 0.2;
-    float medical= (float) 0.15;
-    float entertainment=(float) 0.10;
-    float gas=(float)0.3;
-    float housing=(float) .25;
-
+    public float FoodAndDining= (float) 0.2;
+    public float Medical= (float) 0.4;
+    public float Entertainment=(float) 0.5;
+    public float ElectricityAndGas=(float)0.13;
+    public float Housing=(float) 0.25;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistics);
+        mAuth= FirebaseAuth.getInstance();
+        budgetRef= FirebaseDatabase.getInstance().getReference().child("Expense List").child(mAuth.getCurrentUser().getUid());
 
         pieChart = findViewById(R.id.piechart);
         GotoExpense=findViewById(R.id.goto_expense);
         setupPieChart();
         loadPieChartData();
+
+        budgetRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot snap: snapshot.getChildren()){
+                    Listexpensedata listexpensedata= snap.getValue(Listexpensedata.class);
+                    if(listexpensedata.getItem()=="Food and Dining"){
+                        FoodAndDining+=listexpensedata.getAmount();
+                    }else if(listexpensedata.getItem()=="Electricity and Gas"){
+                        ElectricityAndGas+=listexpensedata.getAmount();
+                    }else if(listexpensedata.getItem()=="Housing"){
+                        Housing+=listexpensedata.getAmount();
+                    }else if(listexpensedata.getItem()=="Medical"){
+                        Medical+=listexpensedata.getAmount();
+                    }else{
+                        Entertainment+=listexpensedata.getAmount();
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         GotoExpense.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in=new Intent(getApplicationContext(),AddExpenseActivity.class);
+                Intent in=new Intent(getApplicationContext(),ListExpenseActivity.class);
                 Toast.makeText(StatisticsActivity.this,"Add Expenses",Toast.LENGTH_SHORT).show();
                 startActivity(in);
             }
@@ -67,11 +103,11 @@ public class StatisticsActivity extends AppCompatActivity {
 
     private void loadPieChartData() {
         ArrayList<PieEntry> entries = new ArrayList<>();
-        entries.add(new PieEntry(food, "Food & Dining"));
-        entries.add(new PieEntry(medical, "Medical"));
-        entries.add(new PieEntry(entertainment, "Entertainment"));
-        entries.add(new PieEntry(gas, "Electricity and Gas"));
-        entries.add(new PieEntry(housing, "Housing"));
+        entries.add(new PieEntry(FoodAndDining, "Food & Dining"));
+        entries.add(new PieEntry(Medical, "Medical"));
+        entries.add(new PieEntry(Entertainment, "Entertainment"));
+        entries.add(new PieEntry(ElectricityAndGas, "Electricity and Gas"));
+        entries.add(new PieEntry(Housing, "Housing"));
 
         ArrayList<Integer> colors = new ArrayList<>();
         for (int color: ColorTemplate.MATERIAL_COLORS) {
