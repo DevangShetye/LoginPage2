@@ -21,33 +21,33 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:text="Item Name"
-               android:textStyle="bold"
+               android:textStyle="normal"
                android:textColor="@color/black"
-               android:textSize="18sp"
+               android:textSize="15sp"
                android:id="@+id/item"/>
            <TextView
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:text="Rs 0 /-"
-               android:textStyle="bold"
+
                android:textColor="@color/black"
-               android:textSize="18sp"
+               android:textSize="15sp"
                android:id="@+id/amount"/>
            <TextView
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:text="Note"
-               android:textStyle="bold"
+
                android:textColor="@color/black"
-               android:textSize="18sp"
+               android:textSize="15sp"
                android:id="@+id/note"/>
            <TextView
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:text="Date"
-               android:textStyle="bold"
+
                android:textColor="@color/black"
-               android:textSize="18sp"
+               android:textSize="15sp"
                android:id="@+id/date"/>
 
        </LinearLayout>

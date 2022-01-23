@@ -12,4 +12,5 @@
     <color name="alternateBackgroundBlue">#0096b3</color>
     <color name="appAlternateTextcolor">#31247A</color>
     <color name="appMobileTextcolor">#806DEA</color>
+    <color name="BudgetLeftcolor">#008000</color>
 </resources>

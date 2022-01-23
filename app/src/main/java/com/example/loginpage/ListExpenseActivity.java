@@ -46,6 +46,7 @@ public class ListExpenseActivity extends AppCompatActivity {
     private ProgressDialog loader;
 
     private TextView totalBudgetAmountTextView;
+    private TextView totalBudgetAmountLeftTextView;
     private RecyclerView recyclerview;
 
 
@@ -58,6 +59,7 @@ public class ListExpenseActivity extends AppCompatActivity {
         budgetRef= FirebaseDatabase.getInstance().getReference().child("Expense List").child(mAuth.getCurrentUser().getUid());
         loader=new ProgressDialog(this);
         totalBudgetAmountTextView= findViewById(R.id.totalBudgetAmountTextView);
+        totalBudgetAmountLeftTextView=findViewById(R.id.totalBudgetAmountLeftTextView);
         recyclerview=findViewById(R.id.recyclerview);
 
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
@@ -70,12 +72,23 @@ public class ListExpenseActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int TotalAmount=0;
+                int monthlylimit=30000;
+                int monthlyolimit;
+
+
 
                 for(DataSnapshot snap: snapshot.getChildren()){
                     Listexpensedata listexpensedata= snap.getValue(Listexpensedata.class);
                     TotalAmount+=listexpensedata.getAmount();
+                    monthlyolimit=monthlylimit-TotalAmount;
+
                     String SumTotal = String.valueOf("Total Expense : Rs"+TotalAmount);
+                    String SumrTotal = String.valueOf("Total Budget Left : Rs"+monthlyolimit);
+
                     totalBudgetAmountTextView.setText(SumTotal);
+
+                   totalBudgetAmountLeftTextView.setText(SumrTotal);
+
                 }
             }
 
