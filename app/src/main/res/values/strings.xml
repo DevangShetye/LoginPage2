@@ -10,17 +10,42 @@
     <string name="Verify_Otp">VERIFY OTP </string>
     <string name="Get_Started_By">Get Started By</string>
     <string name="Add_limit">Add Your Monthly Limit ...</string>
-    <string name="Total_expense_amount">Enter Total Expense Amount ...</string>
-    <string name="Categories">Categories</string>
-    <string-array name="names">
+    <string-array name="items">
         <item>Food and Dining</item>
         <item>Electricity and Gas</item>
         <item>Housing</item>
         <item>Medical</item>
         <item>Entertainment</item>
+        <!-- -->
+
+
 
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Strings for Onboarding screen -->
+
+    <!--Titles-->
+    <string name="first_slide_title">Monitor Your Expenses</string>
+    <string name="second_slide_title">Set Your Budget</string>
+    <string name="third_slide_title">Manage Your Receipts</string>
+    <string name="fourth_slide_title">Analyse Your Buying Trends</string>
+    <string name="fifth_slide_title">Promote Savings</string>
+
+    <!--Description-->
+    <string name="first_slide_desc">Keep a track of your expenses just by uploading your bills and receipts</string>
+    <string name="second_slide_desc">You can set monthly budget with this app and we will notify if you exceed the limit</string>
+    <string name="third_slide_desc">No more hassle of organizing receipts! Store all your bills and receipts at one place</string>
+    <string name="fourth_slide_desc">Get a visual representation of your purchases, see the trends and acknowledge unconscious spending</string>
+    <string name="fifth_slide_desc">Finally! Save more money and feel better</string>
+
+    <!--Buttons-->
+    <string name="nxt_btn">Next</string>
+    <string name="skip_btn">Skip</string>
+    <string name="lets_go_btn">Lets Go</string>
+    <string name="textview">TextView</string>
+    <string name="todo">TODO</string>
+
 
 </resources>

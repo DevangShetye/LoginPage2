@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginPage">
         <activity
+            android:name=".ListExpenseActivity"
+            android:exported="true" />
+        <activity
             android:name=".RecycleActivity"
             android:exported="true" />
         <activity
@@ -27,6 +30,9 @@
             android:exported="true" />
         <activity
             android:name=".BillActivity"
+            android:exported="true" />
+        <activity
+            android:name=".OnBoarding"
             android:exported="true" />
         <activity
             android:name=".StatisticsActivity"
