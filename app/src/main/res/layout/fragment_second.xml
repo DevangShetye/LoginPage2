@@ -102,6 +102,7 @@
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:text="Rs 2590 /-"
+                android:id="@+id/TotalExpense"
                 />
             <LinearLayout
                 android:layout_width="match_parent"

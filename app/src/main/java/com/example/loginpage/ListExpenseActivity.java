@@ -1,5 +1,6 @@
 package com.example.loginpage;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -44,6 +45,9 @@ public class ListExpenseActivity extends AppCompatActivity {
     public DatabaseReference budgetRef;
     private FirebaseAuth mAuth;
     private ProgressDialog loader;
+    private String post_key = "";
+    private String updateitem = "";
+    private int updateamount = 0;
 
     private TextView totalBudgetAmountTextView;
     private TextView totalBudgetAmountLeftTextView;
@@ -186,12 +190,13 @@ public class ListExpenseActivity extends AppCompatActivity {
 
         FirebaseRecyclerAdapter<Listexpensedata,MyViewHolder>adapter=new FirebaseRecyclerAdapter<Listexpensedata, MyViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Listexpensedata Listexpensedata ) {
-                holder.setItemAmount("Allocated amount Rs : "+ Listexpensedata.getAmount());
-                holder.setitemDate("On : "+Listexpensedata.getDate());
-                holder.setItemName("Item Name : "+Listexpensedata.getItem());
+            protected void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") final int position, @NonNull Listexpensedata Listexpensedata) {
+
+                holder.setItemAmount("Allocated amount Rs : " + Listexpensedata.getAmount());
+                holder.setitemDate("On : " + Listexpensedata.getDate());
+                holder.setItemName("Item Name : " + Listexpensedata.getItem());
                 holder.notes.setVisibility(View.GONE);
-                switch (Listexpensedata.getItem()){
+                switch (Listexpensedata.getItem()) {
                     case "Food and Dining":
                         holder.itemImageView.setImageResource(R.drawable.food);
                         break;
@@ -208,6 +213,15 @@ public class ListExpenseActivity extends AppCompatActivity {
                         holder.itemImageView.setImageResource(R.drawable.entertainment);
                         break;
                 }
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        post_key = getRef(position).getKey();
+                        updateitem=Listexpensedata.getItem();
+                        updateamount=Listexpensedata.getAmount();
+                    }
+                });
+
 
             }
 
@@ -224,6 +238,9 @@ public class ListExpenseActivity extends AppCompatActivity {
         adapter.startListening();
         adapter.notifyDataSetChanged();
     }
+
+
+
     public class MyViewHolder extends RecyclerView.ViewHolder{
         View mview;
         public ImageView itemImageView;
@@ -257,4 +274,84 @@ public class ListExpenseActivity extends AppCompatActivity {
 
 
     }
+
+        private void updateData(){
+            AlertDialog.Builder myDialog= new AlertDialog.Builder(this);
+            LayoutInflater inflater = LayoutInflater.from(this);
+            View mView = inflater.inflate(R.layout.update_exppense_layout, null);
+
+            myDialog.setView(mView);
+            final  AlertDialog dialog = myDialog.create();
+
+            final TextView mItem = mView.findViewById(R.id.updateItemName);
+            final EditText mAmount = mView.findViewById(R.id.updateamount);
+            final  EditText mNotes = mView.findViewById(R.id.updatenote);
+
+            mNotes.setVisibility(View.GONE);
+
+            mItem.setText(updateitem);
+
+            mAmount.setText(String.valueOf(updateamount));
+            mAmount.setSelection(String.valueOf(updateamount).length());
+
+            Button delBut = mView.findViewById(R.id.btnDelete);
+            Button btnUpdate = mView.findViewById(R.id.btnUpdate);
+
+            btnUpdate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    updateamount = Integer.parseInt(mAmount.getText().toString());
+
+                    DateFormat dateFormat= new SimpleDateFormat("dd-MM-yyyy");
+                    Calendar cal= Calendar.getInstance();
+                    String date=dateFormat.format(cal.getTime());
+
+                    MutableDateTime epoch=new MutableDateTime();
+                    epoch.setTime(0);
+                    DateTime now= new DateTime();
+                    Months months = Months.monthsBetween(epoch,now);
+
+                    Listexpensedata listexpensedata = new Listexpensedata(updateitem,date,post_key,null,updateamount,months.getMonths());
+                    budgetRef.child(post_key).setValue(listexpensedata).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(ListExpenseActivity.this, "Updated Successfully", Toast.LENGTH_SHORT).show();
+                            }else{
+                                Toast.makeText(ListExpenseActivity.this,task.getException().toString(),Toast.LENGTH_SHORT).show();
+                            }
+
+
+
+                        }
+                    });
+
+                    dialog.dismiss();
+
+                }
+            });
+
+            delBut.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    budgetRef.child(post_key).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()){
+                                Toast.makeText(ListExpenseActivity.this, "Deleted  successfully", Toast.LENGTH_SHORT).show();
+                            }else {
+                                Toast.makeText(ListExpenseActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                    });
+
+                    dialog.dismiss();
+                }
+            });
+
+            dialog.show();
+    }
+
 }

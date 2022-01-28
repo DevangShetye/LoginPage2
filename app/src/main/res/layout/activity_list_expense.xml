@@ -40,8 +40,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:id="@+id/fabbutton"
+            android:src="@drawable/add"
+            app:maxImageSize="50dp"
             app:fabSize="normal"
-            android:backgroundTint="#000"
+            android:backgroundTint="#FFF"
             android:layout_margin="16dp"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

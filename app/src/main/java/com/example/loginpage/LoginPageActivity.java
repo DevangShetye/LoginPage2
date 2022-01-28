@@ -16,17 +16,32 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class LoginPageActivity extends AppCompatActivity {
     private TextView Verifyname,Verifypassword;
     private Button VerifyLoginbutton;
     private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener authStateListener;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        authStateListener=new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user=mAuth.getCurrentUser();
+                if(user!=null){
+                    startActivity(new Intent(LoginPageActivity.this,DashboardActivity.class));
+                    finish();
+
+
+                }
+
+            }
+        };
         setContentView(R.layout.activity_login_page);
         VerifyLoginbutton=(Button)findViewById(R.id.login_button);
         Verifyname=(EditText)findViewById(R.id.verify_user_name);
@@ -48,15 +63,15 @@ public class LoginPageActivity extends AppCompatActivity {
 
     private void userLogin() {
         
-        String email=Verifyname.getText().toString().trim();
+        String userName=Verifyname.getText().toString().trim();
         String password=Verifypassword.getText().toString().trim();
 
-        if(email.isEmpty()){
+        if(userName.isEmpty()){
             Verifyname.setError("Registered Name is Required");
             Verifyname.requestFocus();
             return;
         }
-        if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        if(Patterns.EMAIL_ADDRESS.matcher(userName).matches()){
             Verifyname.setError("Please Enter a Valid Name");
             Verifyname.requestFocus();
             return;
@@ -67,14 +82,17 @@ public class LoginPageActivity extends AppCompatActivity {
             return;
         }
 
-        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(userName,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(LoginPageActivity.this,"Failed to Login ! Please Check your Credentials",Toast.LENGTH_LONG).show();
 
+
+
                 }else{
                     startActivity(new Intent(LoginPageActivity.this,MainActivity.class));
+
 
                 }
 
@@ -83,4 +101,16 @@ public class LoginPageActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(authStateListener);
+    }
+
+    @Override
+    protected void onStop() {
+
+        super.onStop();
+        mAuth.removeAuthStateListener(authStateListener);
+    }
 }

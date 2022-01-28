@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -69,8 +70,10 @@ public class SecondFragment extends Fragment{
 
         View view= inflater.inflate(R.layout.fragment_second, container, false);
         Button limitamt=(Button)view.findViewById(R.id.Firstbtn);
+        TextView totalexpense=(TextView)view.findViewById(R.id.TotalExpense);
         Button expensebtn=(Button)view.findViewById(R.id.viewexpense);
         Button btnOpen= (Button) view.findViewById(R.id.camera_button_open);
+
         btnOpen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

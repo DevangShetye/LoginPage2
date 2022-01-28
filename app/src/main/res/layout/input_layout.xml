@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:hint="Enter Number.."
+                android:hint="Enter Amount.."
                 android:id="@+id/amount"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black"/>
@@ -63,15 +63,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
+
                 <Button
+                    android:id="@+id/cancle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/cancle"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginBottom="2dp"
                     android:text="cancle"
                     android:textAllCaps="false"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:layout_margin="2dp"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
@@ -79,15 +83,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
+
                 <Button
+                    android:id="@+id/save"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/save"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginBottom="2dp"
                     android:text="save"
                     android:textAllCaps="false"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:layout_margin="2dp"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
         </LinearLayout>

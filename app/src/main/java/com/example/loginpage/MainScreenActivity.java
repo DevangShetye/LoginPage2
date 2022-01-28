@@ -11,6 +11,7 @@ public class MainScreenActivity extends AppCompatActivity {
 
     private Button MainLoginbutton;
     private Button MainRegisterbutton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
