@@ -7,6 +7,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
+        android:id="@+id/bills"
         android:layout_width="302dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
@@ -14,32 +15,35 @@
         android:layout_marginEnd="50dp"
         android:gravity="center"
         android:orientation="vertical"
-        android:background="@drawable/limitbutton">
+        android:background="@drawable/limitbutton"
+        tools:ignore="InvalidId">
         <TextView
             android:fontFamily="@font/originalsurfer_regular"
             android:layout_width="270dp"
             android:layout_height="22dp"
-            android:text="View Your Bills"
+            android:text="Bills"
             android:textColor="@color/appTextColor"
             android:textSize="18dp"
             android:textStyle="bold"/>
 
         <ImageView
             android:id="@+id/image_view"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="-20dp"
+            android:layout_marginLeft="110dp"
             android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_height="90dp"
+            android:src="@drawable/bill"
 
             android:layout_weight="1" />
 
-        <Button
+       <!-- <Button
             android:fontFamily="@font/originalsurfer_regular"
             android:id="@+id/view_bills_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="30dp"
-            android:text="View"></Button>
+            android:text="View"></Button>-->
 
     </LinearLayout>
 

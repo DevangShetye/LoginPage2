@@ -33,8 +33,8 @@ public class LoginPageActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user=mAuth.getCurrentUser();
-                if(user!=null){
-                    startActivity(new Intent(LoginPageActivity.this,DashboardActivity.class));
+                if(user==null){
+                    startActivity(new Intent(LoginPageActivity.this,MainActivity.class));
                     finish();
 
 

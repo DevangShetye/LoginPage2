@@ -13,4 +13,5 @@
     <color name="appAlternateTextcolor">#31247A</color>
     <color name="appMobileTextcolor">#806DEA</color>
     <color name="BudgetLeftcolor">#008000</color>
+    <color name="ExpenseAmountColor">#FF0000</color>
 </resources>

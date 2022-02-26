@@ -32,7 +32,7 @@ public class SplashActivity extends AppCompatActivity {
                     finish();
                 }
                 else{
-                   Intent intent =new Intent(SplashActivity.this,MainScreenActivity.class);
+                   Intent intent =new Intent(SplashActivity.this,DashboardActivity.class);
                     startActivity(intent);
                     finish();
                 }

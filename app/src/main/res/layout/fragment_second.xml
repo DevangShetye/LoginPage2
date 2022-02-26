@@ -18,6 +18,7 @@
         >
 
         <LinearLayout
+            android:id="@+id/update_limit"
             android:layout_width="302dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -30,48 +31,157 @@
             <TextView
                 android:layout_width="270dp"
                 android:layout_height="22dp"
-                android:text="Your monthly limit"
+                android:text="Update limit"
                 android:textColor="@color/appTextColor"
-                android:fontFamily="@font/originalsurfer_regular"
+
                 android:textSize="18dp"
                 android:textStyle="bold"/>
+            <ImageView
+
+                android:layout_marginTop="-20dp"
+                android:layout_width="60dp"
+                android:layout_marginLeft="110dp"
+                android:layout_height="90dp"
+                android:src="@drawable/budget1"
+                android:layout_weight="1" />
 
 
-            <TextView
-                android:id="@+id/LimitAmount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="50dp"
-                android:gravity="center"
-                android:text="RS 30000 /-"
-                android:fontFamily="@font/originalsurfer_regular"
-                android:textColor="@color/appTextColor"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+            <!-- <TextView
+                 android:id="@+id/LimitAmount"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginStart="50dp"
+                 android:layout_marginTop="25dp"
+                 android:layout_marginEnd="50dp"
+                 android:gravity="center"
+                 android:text="RS 30000 /-"
+                 android:fontFamily="@font/originalsurfer_regular"
+                 android:textColor="@color/appTextColor"
+                 android:textSize="18dp"
+                 android:textStyle="bold" /> -->
 
-            <LinearLayout
+            <!--  <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
                 android:layout_marginStart="60dp"
                 android:layout_marginEnd="60dp"
                 android:background="@drawable/limitinput"
                 android:gravity="center"
-                android:orientation="horizontal"></LinearLayout>
+                android:orientation="horizontal"></LinearLayout> -->
 
-            <Button
-                android:id="@+id/Firstbtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="30dp"
-                android:fontFamily="@font/originalsurfer_regular"
-                android:text="Change"></Button>
+            <!-- <Button
+                 android:id="@+id/Firstbtn"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="20dp"
+                 android:layout_marginBottom="30dp"
+                 android:fontFamily="@font/originalsurfer_regular"
+                 android:text="Change"></Button>-->
 
-        </LinearLayout>
+         </LinearLayout>
+
+         <LinearLayout
+             android:id="@+id/add_expenses"
+             android:layout_width="302dp"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="27dp"
+             android:layout_marginStart="50dp"
+             android:layout_marginEnd="50dp"
+             android:gravity="center"
+             android:orientation="vertical"
+             android:background="@drawable/limitbutton"
+             >
+             <TextView
+                 android:layout_width="270dp"
+                 android:layout_height="22dp"
+                 android:text="Expenses"
+                 android:textColor="@color/appTextColor"
+                 android:textSize="18dp"
+                 android:textStyle="bold"
+                 />
+             <ImageView
+
+                 android:layout_marginTop="-20dp"
+                 android:layout_width="60dp"
+                 android:layout_marginLeft="110dp"
+                 android:layout_height="90dp"
+                 android:src="@drawable/expenses1"
+                 android:layout_weight="1" />
+
+             <!--  <TextView
+                 android:fontFamily="@font/originalsurfer_regular"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginStart="50dp"
+                 android:layout_marginEnd="50dp"
+                 android:layout_marginTop="25dp"
+                 android:gravity="center"
+                 android:textColor="@color/appTextColor"
+                 android:textSize="18dp"
+                 android:textStyle="bold"
+                 android:text="Rs 2590 /-"
+                 android:id="@+id/TotalExpense"
+                 /> -->
+             <!--  <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="5dp"
+                 android:layout_marginStart="60dp"
+                 android:layout_marginEnd="60dp"
+                 android:background="@drawable/limitinput"
+                 android:gravity="center"
+                 android:orientation="horizontal"></LinearLayout> -->
+            <!-- <Button
+                 android:id="@+id/viewexpense"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="20dp"
+                 android:layout_marginBottom="30dp"
+                 android:fontFamily="@font/originalsurfer_regular"
+                 android:text="VIEW "></Button>-->
+         </LinearLayout>
+
+         <LinearLayout
+             android:layout_width="302dp"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="27dp"
+             android:layout_marginStart="50dp"
+             android:layout_marginEnd="50dp"
+             android:gravity="center"
+             android:orientation="vertical"
+             android:id="@+id/upload_Bills_tofirebase"
+             android:background="@drawable/limitbutton">
+             <TextView
+
+                 android:layout_width="270dp"
+                 android:layout_height="22dp"
+                 android:text="Bills"
+                 android:textColor="@color/appTextColor"
+                 android:textSize="18dp"
+                 android:textStyle="bold"/>
+
+                <ImageView
+                  android:id="@+id/image_view"
+                  android:layout_marginTop="-20dp"
+                  android:layout_width="60dp"
+                    android:layout_marginLeft="110dp"
+                  android:layout_height="90dp"
+                    android:src="@drawable/bill"
+
+                  android:layout_weight="1" />
+
+             <!-- <Button
+                  android:fontFamily="@font/originalsurfer_regular"
+                  android:id="@+id/camera_button_open"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="6dp"
+                  android:layout_marginBottom="30dp"
+                  android:text="UPLOAD"></Button>-->
+
+          </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/analysis"
             android:layout_width="302dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="27dp"
@@ -84,13 +194,21 @@
             <TextView
                 android:layout_width="270dp"
                 android:layout_height="22dp"
-                android:text="This Month Expenses"
+                android:text="Analysis"
                 android:textColor="@color/appTextColor"
                 android:textSize="18dp"
                 android:textStyle="bold"
-                android:fontFamily="@font/originalsurfer_regular"/>
+                />
+            <ImageView
 
-            <TextView
+                android:layout_marginTop="-20dp"
+                android:layout_width="60dp"
+                android:layout_marginLeft="110dp"
+                android:layout_height="90dp"
+                android:src="@drawable/analysis1"
+                android:layout_weight="1" />
+
+            <!--  <TextView
                 android:fontFamily="@font/originalsurfer_regular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -103,25 +221,27 @@
                 android:textStyle="bold"
                 android:text="Rs 2590 /-"
                 android:id="@+id/TotalExpense"
-                />
-            <LinearLayout
+                /> -->
+            <!--  <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
                 android:layout_marginStart="60dp"
                 android:layout_marginEnd="60dp"
                 android:background="@drawable/limitinput"
                 android:gravity="center"
-                android:orientation="horizontal"></LinearLayout>
-            <Button
-                android:id="@+id/viewexpense"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="30dp"
-                android:fontFamily="@font/originalsurfer_regular"
-                android:text="VIEW "></Button>
+                android:orientation="horizontal"></LinearLayout> -->
+            <!-- <Button
+                 android:id="@+id/viewexpense"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="20dp"
+                 android:layout_marginBottom="30dp"
+                 android:fontFamily="@font/originalsurfer_regular"
+                 android:text="VIEW "></Button>-->
         </LinearLayout>
+
         <LinearLayout
+            android:id="@+id/add_suggestions"
             android:layout_width="302dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="27dp"
@@ -129,35 +249,59 @@
             android:layout_marginEnd="50dp"
             android:gravity="center"
             android:orientation="vertical"
-            android:background="@drawable/limitbutton">
+            android:background="@drawable/limitbutton"
+            >
             <TextView
-                android:fontFamily="@font/originalsurfer_regular"
                 android:layout_width="270dp"
                 android:layout_height="22dp"
-                android:text="Upload Your Bills"
+                android:text="Suggestions"
                 android:textColor="@color/appTextColor"
                 android:textSize="18dp"
-                android:textStyle="bold"/>
-
+                android:textStyle="bold"
+                />
             <ImageView
-                android:id="@+id/image_view"
-                android:layout_marginTop="20dp"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
 
+                android:layout_marginTop="-20dp"
+                android:layout_width="60dp"
+                android:layout_marginLeft="110dp"
+                android:layout_height="90dp"
+                android:src="@drawable/suggestion"
                 android:layout_weight="1" />
 
-            <Button
+            <!--  <TextView
                 android:fontFamily="@font/originalsurfer_regular"
-                android:id="@+id/camera_button_open"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="30dp"
-                android:text="UPLOAD"></Button>
-
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:textColor="@color/appTextColor"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:text="Rs 2590 /-"
+                android:id="@+id/TotalExpense"
+                /> -->
+            <!--  <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
+                android:background="@drawable/limitinput"
+                android:gravity="center"
+                android:orientation="horizontal"></LinearLayout> -->
+            <!-- <Button
+                 android:id="@+id/viewexpense"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="20dp"
+                 android:layout_marginBottom="30dp"
+                 android:fontFamily="@font/originalsurfer_regular"
+                 android:text="VIEW "></Button>-->
         </LinearLayout>
-    </LinearLayout>
+
+
+      </LinearLayout>
 
 
 
@@ -165,4 +309,4 @@
 
 
 
-</ScrollView>
+  </ScrollView>

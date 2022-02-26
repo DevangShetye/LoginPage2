@@ -5,9 +5,12 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".ListExpenseActivity">
+    tools:context=".ListExpenseActivity"
+    android:background="@color/appBackgroundBlue"
+    >
 
     <TextView
+
         android:id="@+id/totalBudgetAmountTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,17 +18,19 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:textColor="@color/black"
+
+        android:textColor="@color/appTextColor"
         android:layout_marginTop="5dp"/>
     <TextView
         android:id="@+id/totalBudgetAmountLeftTextView"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Total Budget Left : Rs 0/-"
         android:textSize="25sp"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/appTextColor"
         android:layout_marginTop="5dp"/>
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"

@@ -219,6 +219,7 @@ public class ListExpenseActivity extends AppCompatActivity {
                         post_key = getRef(position).getKey();
                         updateitem=Listexpensedata.getItem();
                         updateamount=Listexpensedata.getAmount();
+                        updateData();
                     }
                 });
 

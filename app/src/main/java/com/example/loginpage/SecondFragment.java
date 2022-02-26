@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -69,16 +67,16 @@ public class SecondFragment extends Fragment{
         // Inflate the layout for this fragment
 
         View view= inflater.inflate(R.layout.fragment_second, container, false);
-        Button limitamt=(Button)view.findViewById(R.id.Firstbtn);
-        TextView totalexpense=(TextView)view.findViewById(R.id.TotalExpense);
-        Button expensebtn=(Button)view.findViewById(R.id.viewexpense);
-        Button btnOpen= (Button) view.findViewById(R.id.camera_button_open);
+        View limitamt=(View)view.findViewById(R.id.update_limit);
+        //TextView totalexpense=(TextView)view.findViewById(R.id.TotalExpense);
+        View expensebtn=(View) view.findViewById(R.id.add_expenses);
+        View btnOpen= (View) view.findViewById(R.id.upload_Bills_tofirebase);
 
         btnOpen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in=new Intent(getActivity(),CameraActivity.class);
-                in.putExtra("some","Camera Activity");
+                Intent in=new Intent(getActivity(),UploadImagesActivity.class);
+                in.putExtra("some","UploadImages");
                 startActivity(in);
             }
         });
@@ -93,7 +91,7 @@ public class SecondFragment extends Fragment{
         limitamt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =new Intent(getActivity(),LimitActivity.class);
+                Intent intent =new Intent(getActivity(),CameraActivity.class);
                 intent.putExtra("abs","Set Limit");
             }
         });
