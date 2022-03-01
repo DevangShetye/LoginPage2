@@ -1,14 +1,18 @@
 package com.example.loginpage;
 
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +20,9 @@ import androidx.fragment.app.Fragment;
  * create an instance of this fragment.
  */
 public class ThirdFragment extends Fragment {
+
+    //private TextView userEmail;
+    //private Button logoutBtn;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -51,6 +58,7 @@ public class ThirdFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -63,14 +71,49 @@ public class ThirdFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_third, container, false);
         Button viewBillsbtn=(Button)view.findViewById(R.id.view_bills_button);
+        Button expensebtn=(Button)view.findViewById(R.id.viewexpense);
+        TextView userEmail =(TextView)view.findViewById(R.id.userEmail);
+        Button logoutBtn = (Button)view.findViewById(R.id.logoutBtn);
+
+        userEmail.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
+
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(getActivity())
+                        .setTitle("Balanced Life")
+                        .setMessage("Are you sure you want to logout?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", (dialog, id) -> {
+                            FirebaseAuth.getInstance().signOut();
+                            Intent intent = new Intent(getActivity(), LoginPage.class);
+                            startActivity(intent);
+                            getActivity().finish();
+                        })
+                        .setNegativeButton("No", null)
+                        .show();
+            }
+        });
+
         viewBillsbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in=new Intent(getActivity(),RecycleActivity.class);
+                Intent intent = new Intent(getActivity(),RecycleActivity.class);
 
-                startActivity(in);
+                startActivity(intent);
+            }
+        });
+
+        expensebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),ChooseAnalyticsActivity.class);
+                //in.putExtra("abc","View Analytics");
+                startActivity(intent);
             }
         });
         return view;
+
+
     }
 }

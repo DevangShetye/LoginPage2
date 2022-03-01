@@ -22,7 +22,7 @@ public class MainScreenActivity extends AppCompatActivity {
         MainLoginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),LoginPageActivity.class);
+                Intent intent=new Intent(getApplicationContext(),LoginPage.class);
 
                 startActivity(intent);
             }

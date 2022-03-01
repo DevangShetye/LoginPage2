@@ -69,9 +69,10 @@ public class SecondFragment extends Fragment{
         // Inflate the layout for this fragment
 
         View view= inflater.inflate(R.layout.fragment_second, container, false);
-        Button limitamt=(Button)view.findViewById(R.id.Firstbtn);
-        TextView totalexpense=(TextView)view.findViewById(R.id.TotalExpense);
+        Button limitamt=(Button)view.findViewById(R.id.FirstChangebtn);
+        TextView totalexpense=(TextView)view.findViewById(R.id.SecondChangebtn);
         Button expensebtn=(Button)view.findViewById(R.id.viewexpense);
+        //Button GotoExpense=(Button)view.findViewById(R.id.goto_expense);
         Button btnOpen= (Button) view.findViewById(R.id.camera_button_open);
 
         btnOpen.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +91,7 @@ public class SecondFragment extends Fragment{
                 startActivity(in);
             }
         });
+
         limitamt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChooseAnalyticsActivity">
+
+</androidx.constraintlayout.widget.ConstraintLayout>-->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,7 +16,6 @@
     android:scrollbars="none"
     tools:context=".FirstFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,31 +38,23 @@
             <TextView
                 android:layout_width="270dp"
                 android:layout_height="22dp"
-                android:fontFamily="@font/originalsurfer_regular"
-                android:text="View Your Bills"
+                android:text="TODAY STATISTICS"
                 android:textColor="@color/appTextColor"
+                android:fontFamily="@font/originalsurfer_regular"
                 android:textSize="18dp"
                 android:textStyle="bold"/>
-
-            <!--<ImageView
-                android:id="@+id/image_view1"
-                android:layout_marginTop="20dp"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-
-                android:layout_weight="1" />-->
 
 
 
 
             <Button
-                android:id="@+id/view_bills_button"
+                android:id="@+id/today_view_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="30dp"
                 android:fontFamily="@font/originalsurfer_regular"
-                android:text="View"></Button>
+                android:text="VIEW"></Button>
 
         </LinearLayout>
 
@@ -71,44 +71,23 @@
             <TextView
                 android:layout_width="270dp"
                 android:layout_height="22dp"
-                android:text="Statistics"
+                android:text="WEEKLY STATISTICS"
                 android:textColor="@color/appTextColor"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:fontFamily="@font/originalsurfer_regular"/>
-            <!--<TextView
-                android:fontFamily="@font/originalsurfer_regular"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginTop="25dp"
-                android:gravity="center"
-                android:textColor="@color/appTextColor"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                android:text="Rs 1000000 /-"
-                android:id="@+id/TotalExpense"
-                />-->
 
-            <!--<LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:layout_marginStart="60dp"
-                android:layout_marginEnd="60dp"
-                android:background="@drawable/limitinput"
-                android:gravity="center"
-                android:orientation="horizontal"></LinearLayout>-->
+
             <Button
-                android:id="@+id/viewexpense"
+                android:id="@+id/weekly_view_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="30dp"
                 android:fontFamily="@font/originalsurfer_regular"
-                android:text="VIEW"></Button>
-        </LinearLayout>
+                android:text="VIEW "></Button>
 
+        </LinearLayout>
         <LinearLayout
             android:layout_width="302dp"
             android:layout_height="wrap_content"
@@ -119,16 +98,15 @@
             android:orientation="vertical"
             android:background="@drawable/limitbutton">
             <TextView
-                android:id="@+id/userEmail"
                 android:fontFamily="@font/originalsurfer_regular"
                 android:layout_width="270dp"
-                android:layout_height="22dp"
-                android:text="-"
+                android:layout_height="35dp"
+                android:text="MONTHLY STATISTICS"
                 android:textColor="@color/appTextColor"
                 android:textSize="18dp"
                 android:textStyle="bold"/>
 
-            <!--<ImageView
+           <!-- <ImageView
                 android:id="@+id/image_view"
                 android:layout_marginTop="20dp"
                 android:layout_width="60dp"
@@ -138,20 +116,16 @@
 
             <Button
                 android:fontFamily="@font/originalsurfer_regular"
-                android:id="@+id/logoutBtn"
+                android:id="@+id/monthly_view_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="30dp"
-                android:text="Logout"></Button>
+                android:text="VIEW"></Button>
 
         </LinearLayout>
+
     </LinearLayout>
-
-
-
-
-
 
 
 </ScrollView>

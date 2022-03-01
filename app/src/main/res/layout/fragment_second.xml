@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="65dp"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
         android:orientation="vertical"
@@ -61,7 +61,7 @@
                 android:orientation="horizontal"></LinearLayout>
 
             <Button
-                android:id="@+id/Firstbtn"
+                android:id="@+id/FirstChangebtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -84,12 +84,11 @@
             <TextView
                 android:layout_width="270dp"
                 android:layout_height="22dp"
-                android:text="This Month Expenses"
+                android:text="Your Monthly Income"
                 android:textColor="@color/appTextColor"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:fontFamily="@font/originalsurfer_regular"/>
-
             <TextView
                 android:fontFamily="@font/originalsurfer_regular"
                 android:layout_width="match_parent"
@@ -101,9 +100,10 @@
                 android:textColor="@color/appTextColor"
                 android:textSize="18dp"
                 android:textStyle="bold"
-                android:text="Rs 2590 /-"
-                android:id="@+id/TotalExpense"
+                android:text="Rs 1000000 /-"
+                android:id="@+id/IncomeAmount"
                 />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
@@ -113,13 +113,14 @@
                 android:gravity="center"
                 android:orientation="horizontal"></LinearLayout>
             <Button
-                android:id="@+id/viewexpense"
+                android:id="@+id/SecondChangebtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="30dp"
                 android:fontFamily="@font/originalsurfer_regular"
-                android:text="VIEW "></Button>
+                android:text="CHANGE "></Button>
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="302dp"
@@ -139,13 +140,13 @@
                 android:textSize="18dp"
                 android:textStyle="bold"/>
 
-            <ImageView
+            <!--<ImageView
                 android:id="@+id/image_view"
                 android:layout_marginTop="20dp"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
 
-                android:layout_weight="1" />
+                android:layout_weight="1" />-->
 
             <Button
                 android:fontFamily="@font/originalsurfer_regular"
@@ -157,6 +158,44 @@
                 android:text="UPLOAD"></Button>
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="302dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/limitbutton">
+            <TextView
+                android:fontFamily="@font/originalsurfer_regular"
+                android:layout_width="270dp"
+                android:layout_height="22dp"
+                android:text="Add Expense"
+                android:textColor="@color/appTextColor"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <!--<ImageView
+                android:id="@+id/image_view"
+                android:layout_marginTop="20dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+
+                android:layout_weight="1" />-->
+
+            <Button
+                android:fontFamily="@font/originalsurfer_regular"
+                android:id="@+id/viewexpense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="30dp"
+                android:text="ADD"></Button>
+
+        </LinearLayout>
+
     </LinearLayout>
 
 

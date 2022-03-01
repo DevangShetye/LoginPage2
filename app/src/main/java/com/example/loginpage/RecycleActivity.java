@@ -18,7 +18,7 @@ public class RecycleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycle);
 
-        recview = (RecyclerView) findViewById(R.id.recview);
+        RecyclerView recview = (RecyclerView) findViewById(R.id.recview);
         recview.setLayoutManager(new LinearLayoutManager(this));
 
         FirebaseRecyclerOptions<model> options =

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegistrationActivity extends AppCompatActivity {
     private EditText InputUserName,InputEmail,InputPassword;
     private Button registerbuton;
+    private TextView RegisterQn;
 
     FirebaseDatabase rootNode;
     DatabaseReference reference;
@@ -48,6 +50,15 @@ public class RegistrationActivity extends AppCompatActivity {
         InputEmail=(EditText) findViewById(R.id.input_email);
         InputPassword=(EditText) findViewById(R.id.input_password);
         registerbuton=findViewById(R.id.register_button);
+        RegisterQn = findViewById(R.id.RegisterQn);
+
+        RegisterQn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegistrationActivity.this, LoginPage.class);
+                startActivity(intent);
+            }
+        });
 
 
         registerbuton.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +72,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 if(!InputUserName.getText().toString().trim().isEmpty()){
                     if(!InputEmail.getText().toString().trim().isEmpty()){
                         if(!InputPassword.getText().toString().trim().isEmpty()){
-                            Intent intent=new Intent(getApplicationContext(),LoginPageActivity.class);
+                            Intent intent=new Intent(getApplicationContext(),LoginPage.class);
                             startActivity(intent);
                         }else{
                             Toast.makeText(RegistrationActivity.this,"Input Password",Toast.LENGTH_SHORT).show();

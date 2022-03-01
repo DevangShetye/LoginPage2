@@ -1,15 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FirstFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    &lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;
+    &lt;!&ndash;<TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="First Fragment" />
+    android:text="First Fragment" />&ndash;&gt;
+</FrameLayout>-->
 
-</FrameLayout>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    tools:context=".FirstFragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="640dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/thisweekbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/originalsurfer_regular"
+            android:text="THIS WEEK"></Button>
+
+        <Button
+            android:id="@+id/thismonthbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="80dp"
+            android:fontFamily="@font/originalsurfer_regular"
+            android:text="THIS MONTH"></Button>
+
+
+
+   </LinearLayout>
+
+</ScrollView>

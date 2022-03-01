@@ -1,5 +1,6 @@
 package com.example.loginpage;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +63,28 @@ public class FirstFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first, container, false);
+        View view = inflater.inflate(R.layout.fragment_first, container, false);
+        Button thisweekbtn = (Button)view.findViewById(R.id.thisweekbtn);
+        Button thismonthbtn = (Button)view.findViewById(R.id.thismonthbtn);
+
+        thisweekbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),ThisWeek.class);
+                //in.putExtra("type","week");
+                startActivity(intent);
+            }
+        });
+
+        thismonthbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),ThisMonth.class);
+                //in.putExtra("type","month");
+                startActivity(intent);
+            }
+        });
+
+        return view;
     }
 }

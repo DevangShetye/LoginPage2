@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LimitActivity extends AppCompatActivity {
     EditText MonthlyLimit;
+    EditText MonthlyIncome;
     Button limitButton;
 
 
@@ -22,6 +23,7 @@ public class LimitActivity extends AppCompatActivity {
 
 
         MonthlyLimit=findViewById(R.id.MonthlyLimit);
+        MonthlyIncome = findViewById(R.id.MonthlyIncome);
 
         limitButton=findViewById(R.id.limitButton);
         limitButton.setOnClickListener(new View.OnClickListener() {
@@ -33,6 +35,14 @@ public class LimitActivity extends AppCompatActivity {
                     startActivity(intent);
                 }else{
                     Toast.makeText(LimitActivity.this,"Enter Your Monthly Limit..",Toast.LENGTH_SHORT).show();
+                }
+
+                if(!MonthlyIncome.getText().toString().trim().isEmpty()){
+                    Intent intent=new Intent(getApplicationContext(),DashboardActivity.class);
+                    intent.putExtra("Monthlylimit",MonthlyLimit.getText().toString());
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(LimitActivity.this,"Enter Your Monthly Income..",Toast.LENGTH_SHORT).show();
                 }
 
             }

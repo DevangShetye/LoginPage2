@@ -43,9 +43,9 @@
             android:id="@+id/lets_got_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lets_go_btn"
             android:background="@color/alternateBackgroundBlue"
-            android:visibility="invisible"/>
+            android:text="@string/lets_go_btn"
+            android:visibility="invisible" />
 
         <LinearLayout
             android:id="@+id/dots"

@@ -10,6 +10,7 @@
     <string name="Verify_Otp">VERIFY OTP </string>
     <string name="Get_Started_By">Get Started By</string>
     <string name="Add_limit">Add Your Monthly Limit ...</string>
+    <string name="Add_limit1">Add Your Monthly Income ...</string>
     <string-array name="items">
         <item>Food and Dining</item>
         <item>Electricity and Gas</item>
@@ -17,7 +18,6 @@
         <item>Medical</item>
         <item>Entertainment</item>
         <!-- -->
-
 
 
     </string-array>

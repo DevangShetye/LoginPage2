@@ -15,7 +15,26 @@
         android:label=""
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LoginPage">
+        android:theme="@style/Theme.LoginPage"
+        tools:replace="android:label">
+        <activity
+            android:name=".MonthlyAnalytics"
+            android:exported="true" />
+        <activity
+            android:name=".WeeklyAnalytics"
+            android:exported="true" />
+        <activity
+            android:name=".TodayAnalytics"
+            android:exported="true" />
+        <activity
+            android:name=".ThisMonth"
+            android:exported="true" />
+        <activity
+            android:name=".ThisWeek"
+            android:exported="true" />
+        <activity
+            android:name=".ChooseAnalyticsActivity"
+            android:exported="true" />
         <activity
             android:name=".ListExpenseActivity"
             android:exported="true" />
@@ -26,7 +45,7 @@
             android:name=".MainScreenActivity"
             android:exported="true" />
         <activity
-            android:name=".LoginPageActivity"
+            android:name=".LoginPage"
             android:exported="true" />
         <activity
             android:name=".BillActivity"

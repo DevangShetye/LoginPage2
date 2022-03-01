@@ -30,20 +30,24 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import org.joda.time.DateTime;
 import org.joda.time.Months;
 import org.joda.time.MutableDateTime;
+import org.joda.time.Weeks;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Map;
 
 public class ListExpenseActivity extends AppCompatActivity {
     private FloatingActionButton fabbutton;
-    public DatabaseReference budgetRef;
+    public DatabaseReference budgetRef, personalRef;
     private FirebaseAuth mAuth;
+    private String onlineUserId = "";
     private ProgressDialog loader;
     private String post_key = "";
     private String updateitem = "";
@@ -60,7 +64,9 @@ public class ListExpenseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_expense);
 
         mAuth= FirebaseAuth.getInstance();
+        onlineUserId = mAuth.getCurrentUser().getUid();
         budgetRef= FirebaseDatabase.getInstance().getReference().child("Expense List").child(mAuth.getCurrentUser().getUid());
+        personalRef = FirebaseDatabase.getInstance().getReference("personal").child(mAuth.getCurrentUser().getUid());
         loader=new ProgressDialog(this);
         totalBudgetAmountTextView= findViewById(R.id.totalBudgetAmountTextView);
         totalBudgetAmountLeftTextView=findViewById(R.id.totalBudgetAmountLeftTextView);
@@ -91,7 +97,7 @@ public class ListExpenseActivity extends AppCompatActivity {
 
                     totalBudgetAmountTextView.setText(SumTotal);
 
-                   totalBudgetAmountLeftTextView.setText(SumrTotal);
+                    totalBudgetAmountLeftTextView.setText(SumrTotal);
 
                 }
             }
@@ -110,6 +116,51 @@ public class ListExpenseActivity extends AppCompatActivity {
                 additem();
             }
         });
+
+        budgetRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists() && snapshot.getChildrenCount()>0){
+                    int totalammount = 0;
+
+                    for (DataSnapshot snap:snapshot.getChildren()){
+
+                        Listexpensedata listexpensedata =snap.getValue(Listexpensedata.class);
+
+                        totalammount+=listexpensedata.getAmount();
+
+                        String sttotal=String.valueOf("Month Budget: "+totalammount);
+
+                        totalBudgetAmountTextView.setText(sttotal);
+
+                    }
+                    int weeklyBudget = totalammount/4;
+                    int dailyBudget = totalammount/30;
+                    personalRef.child("budget").setValue(totalammount);
+                    personalRef.child("weeklyBudget").setValue(weeklyBudget);
+                    personalRef.child("dailyBudget").setValue(dailyBudget);
+
+                }else {
+                    personalRef.child("budget").setValue(0);
+                    personalRef.child("weeklyBudget").setValue(0);
+                    personalRef.child("dailyBudget").setValue(0);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+            });
+
+        getMonthFoodBudgetRatios();
+        getMonthHousingBudgetRatios();
+        getMonthEntBudgetRatios();
+        getMonthMedicalBudgetRatios();
+        getMonthElecBudgetRatios();
+
+
     }
 
     private void additem() {
@@ -152,9 +203,14 @@ public class ListExpenseActivity extends AppCompatActivity {
                     MutableDateTime epoch=new MutableDateTime();
                     epoch.setTime(0);
                     DateTime now= new DateTime();
+                    Weeks weeks = Weeks.weeksBetween(epoch,now);
                     Months months = Months.monthsBetween(epoch,now);
 
-                    Listexpensedata listexpensedata = new Listexpensedata(budgetItem,date,id,null,Integer.parseInt(budgetAmount),months.getMonths());
+                    String itemNday = budgetItem+date;
+                    String itemNweek = budgetItem+weeks.getWeeks();
+                    String itemNmonth = budgetItem+months.getMonths();
+
+                    Listexpensedata listexpensedata = new Listexpensedata(budgetItem,date,id,itemNday, itemNweek, itemNmonth,Integer.parseInt(budgetAmount),months.getMonths(), weeks.getWeeks(), null);
                     budgetRef.child(id).setValue(listexpensedata).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
@@ -187,16 +243,20 @@ public class ListExpenseActivity extends AppCompatActivity {
         super.onStart();
         FirebaseRecyclerOptions<Listexpensedata>options=new FirebaseRecyclerOptions.Builder<Listexpensedata>().setQuery(budgetRef,Listexpensedata.class).build();
 
-
         FirebaseRecyclerAdapter<Listexpensedata,MyViewHolder>adapter=new FirebaseRecyclerAdapter<Listexpensedata, MyViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") final int position, @NonNull Listexpensedata Listexpensedata) {
+            protected void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") final int position, @NonNull Listexpensedata listexpensedata) {
 
-                holder.setItemAmount("Allocated amount Rs : " + Listexpensedata.getAmount());
-                holder.setitemDate("On : " + Listexpensedata.getDate());
-                holder.setItemName("Item Name : " + Listexpensedata.getItem());
+
+       /* FirebaseRecyclerAdapter<Listexpensedata,MyViewHolder>adapter=new FirebaseRecyclerAdapter<Listexpensedata, MyViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") final int position, @NonNull Listexpensedata Listexpensedata) {*/
+
+                holder.setItemAmount("Allocated amount Rs : " + listexpensedata.getAmount());
+                holder.setitemDate("On : " + listexpensedata.getDate());
+                holder.setItemName("Item Name : " + listexpensedata.getItem());
                 holder.notes.setVisibility(View.GONE);
-                switch (Listexpensedata.getItem()) {
+                switch (listexpensedata.getItem()) {
                     case "Food and Dining":
                         holder.itemImageView.setImageResource(R.drawable.food);
                         break;
@@ -217,8 +277,8 @@ public class ListExpenseActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         post_key = getRef(position).getKey();
-                        updateitem=Listexpensedata.getItem();
-                        updateamount=Listexpensedata.getAmount();
+                        updateitem=listexpensedata.getItem();
+                        updateamount=listexpensedata.getAmount();
                     }
                 });
 
@@ -275,83 +335,263 @@ public class ListExpenseActivity extends AppCompatActivity {
 
     }
 
-        private void updateData(){
-            AlertDialog.Builder myDialog= new AlertDialog.Builder(this);
-            LayoutInflater inflater = LayoutInflater.from(this);
-            View mView = inflater.inflate(R.layout.update_exppense_layout, null);
+    private void updateData(){
+        AlertDialog.Builder myDialog= new AlertDialog.Builder(this);
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View mView = inflater.inflate(R.layout.update_exppense_layout, null);
 
-            myDialog.setView(mView);
-            final  AlertDialog dialog = myDialog.create();
+        myDialog.setView(mView);
+        final  AlertDialog dialog = myDialog.create();
 
-            final TextView mItem = mView.findViewById(R.id.updateItemName);
-            final EditText mAmount = mView.findViewById(R.id.updateamount);
-            final  EditText mNotes = mView.findViewById(R.id.updatenote);
+        final TextView mItem = mView.findViewById(R.id.updateItemName);
+        final EditText mAmount = mView.findViewById(R.id.updateamount);
+        final  EditText mNotes = mView.findViewById(R.id.updatenote);
 
-            mNotes.setVisibility(View.GONE);
+        mNotes.setVisibility(View.GONE);
 
-            mItem.setText(updateitem);
+        mItem.setText(updateitem);
 
-            mAmount.setText(String.valueOf(updateamount));
-            mAmount.setSelection(String.valueOf(updateamount).length());
+        mAmount.setText(String.valueOf(updateamount));
+        mAmount.setSelection(String.valueOf(updateamount).length());
 
-            Button delBut = mView.findViewById(R.id.btnDelete);
-            Button btnUpdate = mView.findViewById(R.id.btnUpdate);
+        Button delBut = mView.findViewById(R.id.btnDelete);
+        Button btnUpdate = mView.findViewById(R.id.btnUpdate);
 
-            btnUpdate.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-                    updateamount = Integer.parseInt(mAmount.getText().toString());
+                updateamount = Integer.parseInt(mAmount.getText().toString());
 
-                    DateFormat dateFormat= new SimpleDateFormat("dd-MM-yyyy");
-                    Calendar cal= Calendar.getInstance();
-                    String date=dateFormat.format(cal.getTime());
+                DateFormat dateFormat= new SimpleDateFormat("dd-MM-yyyy");
+                Calendar cal= Calendar.getInstance();
+                String date=dateFormat.format(cal.getTime());
 
-                    MutableDateTime epoch=new MutableDateTime();
-                    epoch.setTime(0);
-                    DateTime now= new DateTime();
-                    Months months = Months.monthsBetween(epoch,now);
+                MutableDateTime epoch=new MutableDateTime();
+                epoch.setTime(0);
+                DateTime now= new DateTime();
+                Weeks weeks = Weeks.weeksBetween(epoch,now);
+                Months months = Months.monthsBetween(epoch,now);
 
-                    Listexpensedata listexpensedata = new Listexpensedata(updateitem,date,post_key,null,updateamount,months.getMonths());
-                    budgetRef.child(post_key).setValue(listexpensedata).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if(task.isSuccessful()){
-                                Toast.makeText(ListExpenseActivity.this, "Updated Successfully", Toast.LENGTH_SHORT).show();
-                            }else{
-                                Toast.makeText(ListExpenseActivity.this,task.getException().toString(),Toast.LENGTH_SHORT).show();
-                            }
+                String itemNday = updateitem+date;
+                String itemNweek = updateitem+weeks.getWeeks();
+                String itemNmonth = updateitem+months.getMonths();
 
-
-
+                Listexpensedata listexpensedata = new Listexpensedata(updateitem,date,post_key,itemNday, itemNweek, itemNmonth,updateamount,months.getMonths(),weeks.getWeeks(), null);
+                budgetRef.child(post_key).setValue(listexpensedata).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(ListExpenseActivity.this, "Updated Successfully", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(ListExpenseActivity.this,task.getException().toString(),Toast.LENGTH_SHORT).show();
                         }
-                    });
 
-                    dialog.dismiss();
 
-                }
-            });
 
-            delBut.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    budgetRef.child(post_key).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()){
-                                Toast.makeText(ListExpenseActivity.this, "Deleted  successfully", Toast.LENGTH_SHORT).show();
-                            }else {
-                                Toast.makeText(ListExpenseActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
-                            }
+                    }
+                });
 
+                dialog.dismiss();
+
+            }
+        });
+
+        delBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                budgetRef.child(post_key).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(ListExpenseActivity.this, "Deleted  successfully", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(ListExpenseActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
                         }
-                    });
 
-                    dialog.dismiss();
+                    }
+                });
+
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void getMonthFoodBudgetRatios(){
+        Query query = budgetRef.orderByChild("item").equalTo("Food and Dining");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    int pTotal = 0;
+                    for (DataSnapshot ds :  snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object total = map.get("amount");
+                        pTotal = Integer.parseInt(String.valueOf(total));
+                    }
+
+                    int dayFoodRatio = pTotal/30;
+                    int weekFoodRatio = pTotal/4;
+                    int monthFoodRatio = pTotal;
+
+                    personalRef.child("dayFoodRatio").setValue(dayFoodRatio);
+                    personalRef.child("weekFoodRatio").setValue(weekFoodRatio);
+                    personalRef.child("monthFoodRatio").setValue(monthFoodRatio);
+
+                }else {
+                    personalRef.child("dayFoodRatio").setValue(0);
+                    personalRef.child("weekFoodRatio").setValue(0);
+                    personalRef.child("monthFoodRatio").setValue(0);
                 }
-            });
+            }
 
-            dialog.show();
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getMonthHousingBudgetRatios(){
+        Query query = budgetRef.orderByChild("item").equalTo("Housing");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    int pTotal = 0;
+                    for (DataSnapshot ds :  snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object total = map.get("amount");
+                        pTotal = Integer.parseInt(String.valueOf(total));
+                    }
+
+                    int dayHouseRatio = pTotal/30;
+                    int weekHouseRatio = pTotal/4;
+                    int monthHouseRatio = pTotal;
+
+                    personalRef.child("dayHouseRatio").setValue(dayHouseRatio);
+                    personalRef.child("weekHouseRatio").setValue(weekHouseRatio);
+                    personalRef.child("monthHouseRatio").setValue(monthHouseRatio);
+
+                }else {
+                    personalRef.child("dayHouseRatio").setValue(0);
+                    personalRef.child("weekHouseRatio").setValue(0);
+                    personalRef.child("monthHouseRatio").setValue(0);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getMonthEntBudgetRatios(){
+        Query query = budgetRef.orderByChild("item").equalTo("Entertainment");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    int pTotal = 0;
+                    for (DataSnapshot ds :  snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object total = map.get("amount");
+                        pTotal = Integer.parseInt(String.valueOf(total));
+                    }
+
+                    int dayEntRatio = pTotal/30;
+                    int weekEntRatio = pTotal/4;
+                    int monthEntRatio = pTotal;
+
+                    personalRef.child("dayEntRatio").setValue(dayEntRatio);
+                    personalRef.child("weekEntRatio").setValue(weekEntRatio);
+                    personalRef.child("monthEntRatio").setValue(monthEntRatio);
+
+                }else {
+                    personalRef.child("dayEntRatio").setValue(0);
+                    personalRef.child("weekEntRatio").setValue(0);
+                    personalRef.child("monthEntRatio").setValue(0);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getMonthMedicalBudgetRatios(){
+        Query query = budgetRef.orderByChild("item").equalTo("Medical");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    int pTotal = 0;
+                    for (DataSnapshot ds :  snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object total = map.get("amount");
+                        pTotal = Integer.parseInt(String.valueOf(total));
+                    }
+
+                    int dayMedicalRatio = pTotal/30;
+                    int weekMedicalRatio = pTotal/4;
+                    int monthMedicalRatio = pTotal;
+
+                    personalRef.child("dayMedicalRatio").setValue(dayMedicalRatio);
+                    personalRef.child("weekMedicalRatio").setValue(weekMedicalRatio);
+                    personalRef.child("monthMedicalRatio").setValue(monthMedicalRatio);
+
+                }else {
+                    personalRef.child("dayMedicalRatio").setValue(0);
+                    personalRef.child("weekMedicalRatio").setValue(0);
+                    personalRef.child("monthMedicalRatio").setValue(0);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getMonthElecBudgetRatios(){
+        Query query = budgetRef.orderByChild("item").equalTo("Electricity and Gas");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    int pTotal = 0;
+                    for (DataSnapshot ds :  snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object total = map.get("amount");
+                        pTotal = Integer.parseInt(String.valueOf(total));
+                    }
+
+                    int dayElecRatio = pTotal/30;
+                    int weekElecRatio = pTotal/4;
+                    int monthElecRatio = pTotal;
+
+                    personalRef.child("dayElecRatio").setValue(dayElecRatio);
+                    personalRef.child("weekElecRatio").setValue(weekElecRatio);
+                    personalRef.child("monthElecRatio").setValue(monthElecRatio);
+
+                }else {
+                    personalRef.child("dayElecRatio").setValue(0);
+                    personalRef.child("weekElecRatio").setValue(0);
+                    personalRef.child("monthElecRatio").setValue(0);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
 }
