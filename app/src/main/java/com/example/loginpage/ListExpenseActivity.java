@@ -47,7 +47,7 @@ public class ListExpenseActivity extends AppCompatActivity {
     private FloatingActionButton fabbutton;
     public DatabaseReference budgetRef, personalRef;
     private FirebaseAuth mAuth;
-    private String onlineUserId = "";
+    String onlineUserId = "";
     private ProgressDialog loader;
     private String post_key = "";
     private String updateitem = "";
@@ -279,6 +279,7 @@ public class ListExpenseActivity extends AppCompatActivity {
                         post_key = getRef(position).getKey();
                         updateitem=listexpensedata.getItem();
                         updateamount=listexpensedata.getAmount();
+                        updateData();
                     }
                 });
 

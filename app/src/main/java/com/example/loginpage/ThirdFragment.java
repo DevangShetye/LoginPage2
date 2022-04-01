@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -70,10 +69,14 @@ public class ThirdFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_third, container, false);
-        Button viewBillsbtn=(Button)view.findViewById(R.id.view_bills_button);
-        Button expensebtn=(Button)view.findViewById(R.id.viewexpense);
+        //Button viewBillsbtn=(Button)view.findViewById(R.id.view_bills_button);
+        View viewBillsbtn=(View)view.findViewById(R.id.view_bills_button);
+       // Button expensebtn=(Button)view.findViewById(R.id.viewexpense);
+        View expensebtn=(View)view.findViewById(R.id.viewexpense);
+
         TextView userEmail =(TextView)view.findViewById(R.id.userEmail);
-        Button logoutBtn = (Button)view.findViewById(R.id.logoutBtn);
+       // Button logoutBtn = (Button)view.findViewById(R.id.logoutBtn);
+        View logoutBtn=(View)view.findViewById(R.id.logoutBtn);
 
         userEmail.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
 

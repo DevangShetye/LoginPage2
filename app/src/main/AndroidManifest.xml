@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -17,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginPage"
         tools:replace="android:label">
+        <activity
+            android:name=".UploadImagesActivity"
+            android:exported="true" />
         <activity
             android:name=".MonthlyAnalytics"
             android:exported="true" />
@@ -46,9 +50,6 @@
             android:exported="true" />
         <activity
             android:name=".LoginPage"
-            android:exported="true" />
-        <activity
-            android:name=".BillActivity"
             android:exported="true" />
         <activity
             android:name=".OnBoarding"

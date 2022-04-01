@@ -21,8 +21,10 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
 
     @Override
     protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull model model) {
-        holder.location.setText(model.getLocation());
-        Glide.with(holder.img.getContext()).load(model.getPurl()).into(holder.img);
+      //  holder.location.setText(model.getLocation());
+
+       //Glide.with(holder.img.getContext()).load(model.getImageUrl()).into(holder.img);
+        Glide.with(holder.img.getContext()).load(model.getImageUrl()).into(holder.img);
 
 
 

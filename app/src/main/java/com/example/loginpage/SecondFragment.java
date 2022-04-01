@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -69,21 +67,25 @@ public class SecondFragment extends Fragment{
         // Inflate the layout for this fragment
 
         View view= inflater.inflate(R.layout.fragment_second, container, false);
-        Button limitamt=(Button)view.findViewById(R.id.FirstChangebtn);
-        TextView totalexpense=(TextView)view.findViewById(R.id.SecondChangebtn);
-        Button expensebtn=(Button)view.findViewById(R.id.viewexpense);
+        //Button limitamt=(Button)view.findViewById(R.id.FirstChangebtn);
+        //TextView totalexpense=(TextView)view.findViewById(R.id.SecondChangebtn);
+        //Button expensebtn=(Button)view.findViewById(R.id.viewexpense);
         //Button GotoExpense=(Button)view.findViewById(R.id.goto_expense);
-        Button btnOpen= (Button) view.findViewById(R.id.camera_button_open);
+        //Button btnOpen= (Button) view.findViewById(R.id.camera_button_open);
+        View updateLimit=(View)view.findViewById(R.id.updateLimits);
+        //TextView totalexpense=(TextView)view.findViewById(R.id.TotalExpense);
+        View addExpenses=(View) view.findViewById(R.id.add_expenses);
+        View uploadBills= (View) view.findViewById(R.id.upload_Bills_tofirebase);
 
-        btnOpen.setOnClickListener(new View.OnClickListener() {
+        uploadBills.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in=new Intent(getActivity(),CameraActivity.class);
-                in.putExtra("some","Camera Activity");
+                Intent in=new Intent(getActivity(),UploadImagesActivity.class);
+                in.putExtra("some","Upload Images");
                 startActivity(in);
             }
         });
-        expensebtn.setOnClickListener(new View.OnClickListener() {
+        addExpenses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent in=new Intent(getActivity(),StatisticsActivity.class);
@@ -92,7 +94,7 @@ public class SecondFragment extends Fragment{
             }
         });
 
-        limitamt.setOnClickListener(new View.OnClickListener() {
+        updateLimit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent =new Intent(getActivity(),LimitActivity.class);

@@ -36,16 +36,18 @@
             android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:id="@+id/fabbutton"
-            android:src="@drawable/add"
-            app:maxImageSize="50dp"
-            app:fabSize="normal"
+            android:layout_margin="16dp"
             android:backgroundTint="#FFF"
-            android:layout_margin="16dp"/>
+            android:src="@drawable/add"
+            app:fabSize="normal"
+            app:maxImageSize="50dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

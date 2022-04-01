@@ -1,29 +1,21 @@
 package com.example.loginpage;
 
-public class model {
-    String purl,location;
-    model(){
+public  class model{
+    private String imageUrl;
+    public model(){
 
     }
 
-    public model(String purl, String location) {
-        this.purl = purl;
-        this.location = location;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public String getPurl() {
-        return purl;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
-    public void setPurl(String purl) {
-        this.purl = purl;
+    public model(String imageUrl){
+        this.imageUrl=imageUrl;
     }
 
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
 }

@@ -17,46 +17,6 @@
         android:orientation="vertical"
         >
 
-        <LinearLayout
-            android:layout_width="302dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:background="@drawable/limitbutton"
-            android:gravity="center"
-            android:orientation="vertical"
-            >
-
-            <TextView
-                android:layout_width="270dp"
-                android:layout_height="22dp"
-                android:fontFamily="@font/originalsurfer_regular"
-                android:text="View Your Bills"
-                android:textColor="@color/appTextColor"
-                android:textSize="18dp"
-                android:textStyle="bold"/>
-
-            <!--<ImageView
-                android:id="@+id/image_view1"
-                android:layout_marginTop="20dp"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-
-                android:layout_weight="1" />-->
-
-
-
-
-            <Button
-                android:id="@+id/view_bills_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="30dp"
-                android:fontFamily="@font/originalsurfer_regular"
-                android:text="View"></Button>
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="302dp"
@@ -66,75 +26,104 @@
             android:layout_marginEnd="50dp"
             android:gravity="center"
             android:orientation="vertical"
-            android:background="@drawable/limitbutton"
-            >
+            android:id="@+id/view_bills_button"
+            android:background="@drawable/limitbutton">
             <TextView
+
+                android:layout_width="270dp"
+                android:layout_height="22dp"
+                android:text="View Bills"
+                android:textColor="@color/appTextColor"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_marginTop="-20dp"
+                android:layout_width="60dp"
+                android:layout_marginLeft="110dp"
+                android:layout_height="90dp"
+                android:src="@drawable/bill"
+
+                android:layout_weight="1" />
+
+            <!-- <Button
+                 android:fontFamily="@font/originalsurfer_regular"
+                 android:id="@+id/camera_button_open"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="6dp"
+                 android:layout_marginBottom="30dp"
+                 android:text="UPLOAD"></Button>-->
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="302dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/viewexpense"
+            android:background="@drawable/limitbutton"
+            tools:ignore="DuplicateIds">
+            <TextView
+
                 android:layout_width="270dp"
                 android:layout_height="22dp"
                 android:text="Statistics"
                 android:textColor="@color/appTextColor"
                 android:textSize="18dp"
-                android:textStyle="bold"
-                android:fontFamily="@font/originalsurfer_regular"/>
-            <!--<TextView
-                android:fontFamily="@font/originalsurfer_regular"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginTop="25dp"
-                android:gravity="center"
-                android:textColor="@color/appTextColor"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                android:text="Rs 1000000 /-"
-                android:id="@+id/TotalExpense"
-                />-->
-
-            <!--<LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:layout_marginStart="60dp"
-                android:layout_marginEnd="60dp"
-                android:background="@drawable/limitinput"
-                android:gravity="center"
-                android:orientation="horizontal"></LinearLayout>-->
-            <Button
-                android:id="@+id/viewexpense"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="30dp"
-                android:fontFamily="@font/originalsurfer_regular"
-                android:text="VIEW"></Button>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="302dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="27dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:background="@drawable/limitbutton">
-            <TextView
-                android:id="@+id/userEmail"
-                android:fontFamily="@font/originalsurfer_regular"
-                android:layout_width="270dp"
-                android:layout_height="22dp"
-                android:text="-"
-                android:textColor="@color/appTextColor"
-                android:textSize="18dp"
                 android:textStyle="bold"/>
 
-            <!--<ImageView
+            <ImageView
                 android:id="@+id/image_view"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="-20dp"
                 android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_marginLeft="110dp"
+                android:layout_height="90dp"
+                android:src="@drawable/analysis"
 
-                android:layout_weight="1" />-->
+                android:layout_weight="1" />
+
+            <!-- <Button
+                 android:fontFamily="@font/originalsurfer_regular"
+                 android:id="@+id/camera_button_open"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="6dp"
+                 android:layout_marginBottom="30dp"
+                 android:text="UPLOAD"></Button>-->
+
+        </LinearLayout>
+
+        <!-- <LinearLayout
+             android:layout_width="302dp"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="27dp"
+             android:layout_marginStart="50dp"
+             android:layout_marginEnd="50dp"
+             android:gravity="center"
+             android:orientation="vertical"
+             android:background="@drawable/limitbutton">
+             <TextView
+                 android:id="@+id/userEmail"
+                 android:fontFamily="@font/originalsurfer_regular"
+                 android:layout_width="270dp"
+                 android:layout_height="22dp"
+                 android:text="-"
+                 android:textColor="@color/appTextColor"
+                 android:textSize="18dp"
+                 android:textStyle="bold"/>
+
+             <ImageView
+                 android:id="@+id/image_view"
+                 android:layout_marginTop="20dp"
+                 android:layout_width="60dp"
+                 android:layout_height="60dp"
+
+                 android:layout_weight="1" />
 
             <Button
                 android:fontFamily="@font/originalsurfer_regular"
@@ -144,6 +133,58 @@
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="30dp"
                 android:text="Logout"></Button>
+
+        </LinearLayout>-->
+        <LinearLayout
+            android:layout_width="302dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/logoutBtn"
+            android:background="@drawable/limitbutton"
+            tools:ignore="DuplicateIds">
+            <TextView
+
+                android:layout_width="270dp"
+                android:layout_height="22dp"
+                android:text="User Logout"
+                android:textColor="@color/appTextColor"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/userEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:fontFamily="@font/originalsurfer_regular"
+                android:text="-"
+                android:textColor="@color/appTextColor"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_marginTop="-65dp"
+                android:layout_width="60dp"
+                android:layout_marginLeft="110dp"
+                android:layout_height="90dp"
+                android:src="@drawable/logout"
+
+                android:layout_weight="1" />
+
+             <!--<Button
+                 android:fontFamily="@font/originalsurfer_regular"
+                 android:id="@+id/camera_button_open"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="6dp"
+                 android:layout_marginBottom="30dp"
+                 android:text="UPLOAD"></Button>-->
 
         </LinearLayout>
     </LinearLayout>
