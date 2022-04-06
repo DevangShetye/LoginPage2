@@ -1,8 +1,12 @@
 package com.example.loginpage;
 
 public class Listexpensedata {
-    String item,date,id,itemNday,itemNweek,itemNmonth;
-    int amount,week,month;
+    String item, date, id, itemNday, itemNweek, itemNmonth;
+
+
+
+
+    int amount, week, month;
     String notes;
     //int limitamount;
 
@@ -15,6 +19,7 @@ public class Listexpensedata {
         this.date = date;
         this.id = id;
         this.itemNday = itemNday;
+
         this.itemNweek = itemNweek;
         this.itemNmonth = itemNmonth;
         this.amount = amount;

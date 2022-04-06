@@ -68,7 +68,7 @@ public class UploadImagesActivity extends AppCompatActivity {
         browse=(Button)findViewById(R.id.browse);
         cambutton=findViewById(R.id.button_open);
        // FirebaseDatabase.getInstance().getReference().child("Expense List").child(mAuth.getCurrentUser().getUid()).child("Bills")
-        root= FirebaseDatabase.getInstance().getReference().child("Expense List").child(onlineUserId).child("Bills");
+        root= FirebaseDatabase.getInstance().getReference().child("Registered_Users").child(onlineUserId).child("Bills");
         //request permission
         if(ContextCompat.checkSelfPermission(UploadImagesActivity.this, Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(UploadImagesActivity.this,
@@ -161,6 +161,8 @@ public class UploadImagesActivity extends AppCompatActivity {
                         model model = new model(uri.toString());
                         String modelID=root.push().getKey();
                         root.child(modelID).setValue(model);
+                        root.child(modelID).child("date").setValue(datetime);
+
 
                         Toast.makeText(UploadImagesActivity.this, "Uploaded Successfully", Toast.LENGTH_SHORT).show();
 

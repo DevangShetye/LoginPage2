@@ -22,37 +22,51 @@
     android:scrollbars="none"
     tools:context=".FirstFragment">
 
-    <LinearLayout
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingClass">
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
         android:layout_width="match_parent"
+        android:layout_height="637dp" />
+
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="0dp"
+    android:layout_marginLeft="0dp"
+    android:layout_marginRight="0dp"
+    android:orientation="horizontal"
+    >
+
+    <Button
+        android:id="@+id/thisweekbtn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="640dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:orientation="horizontal"
-        >
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/originalsurfer_regular"
+        android:text="THIS WEEK"></Button>
 
-        <Button
-            android:id="@+id/thisweekbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="20dp"
-            android:fontFamily="@font/originalsurfer_regular"
-            android:text="THIS WEEK"></Button>
-
-        <Button
-            android:id="@+id/thismonthbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="80dp"
-            android:fontFamily="@font/originalsurfer_regular"
-            android:text="THIS MONTH"></Button>
+    <Button
+        android:id="@+id/thismonthbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="80dp"
+        android:fontFamily="@font/originalsurfer_regular"
+        android:text="THIS MONTH"></Button>
 
 
 
-   </LinearLayout>
+</LinearLayout>
+</LinearLayout>
+
 
 </ScrollView>

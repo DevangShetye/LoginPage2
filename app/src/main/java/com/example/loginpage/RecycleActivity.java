@@ -11,7 +11,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RecycleActivity extends AppCompatActivity {
-    RecyclerView recview;
     myadapter adapter;
     FirebaseAuth mAuth;
     String onlineUserId = "";
@@ -28,7 +27,7 @@ public class RecycleActivity extends AppCompatActivity {
 
         FirebaseRecyclerOptions<model> options =
                 new FirebaseRecyclerOptions.Builder<model>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Expense List").child(onlineUserId).child("Bills"), model.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Registered_Users").child(onlineUserId).child("Bills"), model.class)
                         .build();
 
         adapter = new myadapter(options);

@@ -12,19 +12,27 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewholder> {
     public myadapter(@NonNull FirebaseRecyclerOptions<model> options) {
         super(options);
     }
+    Calendar calendar=Calendar.getInstance();
+    SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd-MMM-yyyy_hh:mm:ss");
+    String datetime=simpleDateFormat.format(calendar.getTime());
 
     @Override
     protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull model model) {
       //  holder.location.setText(model.getLocation());
 
        //Glide.with(holder.img.getContext()).load(model.getImageUrl()).into(holder.img);
+
         Glide.with(holder.img.getContext()).load(model.getImageUrl()).into(holder.img);
+        holder.dateNtime.setText(datetime);
 
 
 
@@ -42,11 +50,11 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
 
     class myviewholder extends RecyclerView.ViewHolder{
         CircleImageView img;
-        TextView location;
+        TextView dateNtime;
         public myviewholder(@NonNull View itemView) {
             super(itemView);
             img=(CircleImageView)itemView.findViewById(R.id.img1);
-            location=(TextView)itemView.findViewById(R.id.locationtext);
+            dateNtime=(TextView)itemView.findViewById(R.id.dateNtimeText);
 
         }
     }

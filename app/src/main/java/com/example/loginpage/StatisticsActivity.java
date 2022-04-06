@@ -74,14 +74,19 @@ public class StatisticsActivity extends AppCompatActivity {
 
             }
         });
-        GotoExpense.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent in=new Intent(getApplicationContext(),ListExpenseActivity.class);
-                Toast.makeText(StatisticsActivity.this,"Add Expenses",Toast.LENGTH_SHORT).show();
-                startActivity(in);
-            }
-        });
+        try {
+            GotoExpense.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent=new Intent(getApplicationContext(),ListExpenseActivity.class);
+                    Toast.makeText(StatisticsActivity.this,"Add Expenses",Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                }
+            });
+        } catch (Exception e) {
+            Toast.makeText(StatisticsActivity.this,e.toString(),Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
     }
 
     private void setupPieChart() {

@@ -116,15 +116,12 @@
                  android:textColor="@color/appTextColor"
                  android:textSize="18dp"
                  android:textStyle="bold"/>
-
              <ImageView
                  android:id="@+id/image_view"
                  android:layout_marginTop="20dp"
                  android:layout_width="60dp"
                  android:layout_height="60dp"
-
                  android:layout_weight="1" />
-
             <Button
                 android:fontFamily="@font/originalsurfer_regular"
                 android:id="@+id/logoutBtn"
@@ -133,7 +130,6 @@
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="30dp"
                 android:text="Logout"></Button>
-
         </LinearLayout>-->
         <LinearLayout
             android:layout_width="302dp"
@@ -177,14 +173,14 @@
 
                 android:layout_weight="1" />
 
-             <!--<Button
-                 android:fontFamily="@font/originalsurfer_regular"
-                 android:id="@+id/camera_button_open"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:layout_marginTop="6dp"
-                 android:layout_marginBottom="30dp"
-                 android:text="UPLOAD"></Button>-->
+            <!--<Button
+                android:fontFamily="@font/originalsurfer_regular"
+                android:id="@+id/camera_button_open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="30dp"
+                android:text="UPLOAD"></Button>-->
 
         </LinearLayout>
     </LinearLayout>
