@@ -245,7 +245,7 @@ public class ListExpenseActivity extends AppCompatActivity {
         FirebaseRecyclerAdapter<Listexpensedata, MyViewHolder> adapter = new FirebaseRecyclerAdapter<Listexpensedata, MyViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") final int position, @NonNull Listexpensedata listexpensedata) {
-
+                    float a=20;
                 if(listexpensedata.id == null){
                     return;
                 }
@@ -277,6 +277,7 @@ public class ListExpenseActivity extends AppCompatActivity {
                         post_key = getRef(position).getKey();
                         updateitem = listexpensedata.getItem();
                         updateamount = listexpensedata.getAmount();
+                        updateData();
                     }
                 });
             }

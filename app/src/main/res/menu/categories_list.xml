@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/foodNdining"
+    android:icon="@drawable/ic_baseline_fastfood_24"
+    android:title=""/>
+    <item
+        android:id="@+id/electricityNgas"
+        android:icon="@drawable/ic_baseline_local_gas_station_24"
+        android:title=""/>
+    <item
+        android:id="@+id/Hosuing"
+        android:icon="@drawable/ic_baseline_medical_services_24"
+        android:title=""/>
+
+
+</menu>

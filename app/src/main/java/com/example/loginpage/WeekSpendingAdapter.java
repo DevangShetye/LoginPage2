@@ -1,8 +1,6 @@
 package com.example.loginpage;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,19 +38,20 @@ public class WeekSpendingAdapter extends RecyclerView.Adapter<WeekSpendingAdapte
         holder.notes.setVisibility(View.GONE);
         switch (listexpensedata.getItem()) {
             case "Food and Dining":
-                holder.itemImageView.setImageResource(R.drawable.food);
+                holder.itemImageView.setImageResource(R.drawable.diet);
                 break;
             case "Electricity and Gas":
-                holder.itemImageView.setImageResource(R.drawable.electricityngas);
+                holder.itemImageView.setImageResource(R.drawable.chargingstation);
                 break;
             case "Housing":
-                holder.itemImageView.setImageResource(R.drawable.housing);
+                holder.itemImageView.setImageResource(R.drawable.flash);
                 break;
             case "Medical":
-                holder.itemImageView.setImageResource(R.drawable.medicalpng);
+                holder.itemImageView.setImageResource(R.drawable.capsules);
                 break;
             case "Entertainment":
-                holder.itemImageView.setImageResource(R.drawable.entertainment);
+                holder.itemImageView.setImageResource(R.drawable.popcorn);
+
                 break;
         }
     }

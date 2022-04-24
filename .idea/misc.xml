@@ -6,11 +6,17 @@
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21041666666666667" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/drawable/backgroundbox.xml" value="0.3828125" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/drawable/backgroundbutton.xml" value="0.3828125" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/drawable/ic_baseline_fastfood_24.xml" value="0.3651041666666667" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21041666666666667" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.15729166666666666" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/drawable/ic_splash1screen.xml" value="0.20729166666666668" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/drawable/ic_splash2screen.xml" value="0.3651041666666667" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/drawable/ic_splash_screen.xml" value="0.234375" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/drawable/ic_undraw_buy_house__560_d.xml" value="0.2324074074074074" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/drawable/ic_undraw_by_my_car_ttge.xml" value="0.2324074074074074" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/drawable/ic_undraw_eating_together_re_ux62.xml" value="0.2324074074074074" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/drawable/ic_undraw_horror_movie_3988.xml" value="0.2324074074074074" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/drawable/ic_undraw_medicine_b_1_ol.xml" value="0.2324074074074074" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/drawable/limitbox.xml" value="0.3828125" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/drawable/limitbutton.xml" value="0.3828125" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/drawable/limitinput.xml" value="0.3828125" />
@@ -19,34 +25,48 @@
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_add_expense.xml" value="0.25" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_bill.xml" value="0.25" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_camera.xml" value="0.25" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_categories_limit.xml" value="0.24270833333333333" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_choose_analytics.xml" value="0.3489583333333333" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_dashboard.xml" value="0.22" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_extracted_text.xml" value="0.33" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_limit.xml" value="0.36666666666666664" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_list_expense.xml" value="0.25729166666666664" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_login_page.xml" value="0.3489583333333333" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_main_screen.xml" value="0.33" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_monthly_analytics.xml" value="0.2526041666666667" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_on_boarding.xml" value="0.3020833333333333" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_recycle.xml" value="0.2635416666666667" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_registration.xml" value="0.39976553341148885" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_splash.xml" value="0.33" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_statistics.xml" value="0.2694746376811594" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_suggestion.xml" value="0.22" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_this_month.xml" value="0.3489583333333333" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_this_week.xml" value="0.3489583333333333" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_today_analytics.xml" value="0.25" />
-        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_upload_images.xml" value="0.1391304347826087" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_upload_images.xml" value="0.25" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/activity_weekly_analytics.xml" value="0.3489583333333333" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/fragment_electricity_ngas.xml" value="0.16767983789260385" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/fragment_entertainmnet.xml" value="0.16767983789260385" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/fragment_first.xml" value="0.25" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/fragment_food_ndining.xml" value="0.1" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/fragment_housing.xml" value="0.2869791666666667" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/fragment_medical.xml" value="0.16767983789260385" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/fragment_second.xml" value="0.4166666666666667" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/fragment_third.xml" value="0.33" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/input_layout.xml" value="0.25729166666666664" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/retrieve_layout.xml" value="0.3489583333333333" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/singlerow.xml" value="0.2635416666666667" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/slides_layout.xml" value="0.33" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/suggestion_layout.xml" value="0.33" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/layout/update_exppense_layout.xml" value="0.3489583333333333" />
+        <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/menu/categories_list.xml" value="0.21203703703703702" />
         <entry key="..\:/FINAL YR PROJECT/Balanced LIfe CODE FILE/LoginPage2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1703125" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

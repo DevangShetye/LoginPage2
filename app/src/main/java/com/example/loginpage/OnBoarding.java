@@ -41,7 +41,7 @@ public class OnBoarding extends AppCompatActivity {
         letsGo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),RegistrationActivity.class);
+                Intent intent=new Intent(getApplicationContext(),MainScreenActivity.class);
 
                 startActivity(intent);
             }
@@ -49,7 +49,7 @@ public class OnBoarding extends AppCompatActivity {
     }
 
     public void skip(View view) {
-        startActivity(new Intent(this, RegistrationActivity.class));
+        startActivity(new Intent(this, MainScreenActivity.class));
         finish();
     }
 
@@ -109,4 +109,4 @@ public class OnBoarding extends AppCompatActivity {
         }
     };
 
-    }
+}

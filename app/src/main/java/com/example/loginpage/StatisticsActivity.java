@@ -110,7 +110,7 @@ public class StatisticsActivity extends AppCompatActivity {
         ArrayList<PieEntry> entries = new ArrayList<>();
         entries.add(new PieEntry(FoodAndDining, "Food & Dining"));
         entries.add(new PieEntry(Medical, "Medical"));
-        entries.add(new PieEntry(Entertainment, "Entertainment"));
+        entries.add(new PieEntry(Entertainment, "Clothing"));
         entries.add(new PieEntry(ElectricityAndGas, "Electricity and Gas"));
         entries.add(new PieEntry(Housing, "Housing"));
 

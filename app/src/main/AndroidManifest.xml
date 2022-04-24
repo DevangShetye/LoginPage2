@@ -19,6 +19,15 @@
         android:theme="@style/Theme.LoginPage"
         tools:replace="android:label">
         <activity
+            android:name=".CategoriesLimitActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SuggestionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ExtractedTextActivity"
+            android:exported="true" />
+        <activity
             android:name=".UploadImagesActivity"
             android:exported="true" />
         <activity

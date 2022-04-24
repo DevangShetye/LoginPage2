@@ -76,6 +76,17 @@ public class SecondFragment extends Fragment{
         //TextView totalexpense=(TextView)view.findViewById(R.id.TotalExpense);
         View addExpenses=(View) view.findViewById(R.id.add_expenses);
         View uploadBills= (View) view.findViewById(R.id.upload_Bills_tofirebase);
+        View billsExtraction=(View)view.findViewById(R.id.bills_extracted_text);
+        View suggestion=(View)view.findViewById(R.id.add_suggestions);
+
+        suggestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in=new Intent(getActivity(),SuggestionActivity.class);
+                in.putExtra("some","Sugguestion");
+                startActivity(in);
+            }
+        });
 
         uploadBills.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +110,16 @@ public class SecondFragment extends Fragment{
             public void onClick(View view) {
                 Intent intent =new Intent(getActivity(),LimitActivity.class);
                 intent.putExtra("abs","Set Limit");
+                startActivity(intent);
+            }
+        });
+
+        billsExtraction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),ExtractedTextActivity.class);
+                startActivity(intent);
+
             }
         });
         return view;

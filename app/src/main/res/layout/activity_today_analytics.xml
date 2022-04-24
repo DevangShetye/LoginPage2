@@ -148,11 +148,14 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:layout_toEndOf="@+id/linearLayout"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/food"
-                        android:layout_margin="10dp"/>
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@+id/linearLayout"
+                        android:src="@drawable/diet" />
 
                 </RelativeLayout>
                 <RelativeLayout
@@ -218,11 +221,14 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:layout_toEndOf="@+id/linearLayout1"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/electricityngas"
-                        android:layout_margin="10dp"/>
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@+id/linearLayout1"
+                        android:src="@drawable/chargingstation" />
 
                 </RelativeLayout>
                 <RelativeLayout
@@ -293,7 +299,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         android:layout_toEndOf="@+id/linearLayout2"
-                        android:src="@drawable/housing" />
+                        android:src="@drawable/flash" />
 
                 </RelativeLayout>
                 <RelativeLayout
@@ -359,11 +365,14 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:layout_toEndOf="@+id/linearLayout3"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/entertainment"
-                        android:layout_margin="10dp"/>
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@+id/linearLayout3"
+                        android:src="@drawable/popcorn" />
 
                 </RelativeLayout>
                 <RelativeLayout
@@ -429,11 +438,14 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:layout_toEndOf="@+id/linearLayout4"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/medicalpng"
-                        android:layout_margin="10dp"/>
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@+id/linearLayout4"
+                        android:src="@drawable/capsules" />
 
                 </RelativeLayout>
 

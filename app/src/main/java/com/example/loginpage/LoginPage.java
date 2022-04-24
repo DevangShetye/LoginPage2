@@ -88,11 +88,11 @@ public class LoginPage extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
                                 progressDialog.dismiss();
-                        }else{
+                            }else{
                                 Toast.makeText(LoginPage.this,task.getException().toString(), Toast.LENGTH_SHORT).show();
                                 progressDialog.dismiss();
                             }
-                    }
+                        }
 
 
 

@@ -35,14 +35,11 @@ public class RegistrationActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         /*Toast.makeText(RegistrationActivity.this, "Firebase Connection Successful",Toast.LENGTH_LONG).show();
-
         //FirebaseDatabase database = FirebaseDatabase.getInstance();
         //DatabaseReference myRef = database.getReference("message");
         //myRef.setValue("Hello, World!");
-
         //Calling our firebase database i.e root node
         rootNode = FirebaseDatabase.getInstance();
-
         //To call specific nodes of the database
         reference = rootNode.getReference().child("registeredUsers");*/
 

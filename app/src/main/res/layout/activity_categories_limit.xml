@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:layout_marginTop="10dp"
+    android:paddingBottom="5dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:text="Add Category wise Limit..."
+        android:textColor="@color/appTextColor"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/originalsurfer_regular"
+        android:paddingBottom="100dp"
+        />
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:paddingBottom="20dp"
+    >
+    <EditText
+        android:id="@+id/edit_cricketer_name"
+        android:layout_width="175dp"
+        android:layout_height="40dp"
+        android:inputType="number"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="18dp"
+        android:layout_weight="1"
+        android:background="@drawable/backgroundbox"
+        android:hint="Add Limit"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"></EditText>
+
+
+    <TextView
+
+        android:layout_width="211dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="-8dp"
+
+        android:paddingLeft="0dp"
+        android:text="Food and Dining"
+        android:textColor="@color/appTextColor"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/image_remove"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:color="@color/black"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/diet"></ImageView>
+</LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="20dp"
+        >
+        <EditText
+
+            android:layout_width="175dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="18dp"
+            android:layout_weight="1"
+            android:background="@drawable/backgroundbox"
+            android:hint="Add Limit"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"></EditText>
+
+
+        <TextView
+
+            android:layout_width="211dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="-8dp"
+
+            android:paddingLeft="0dp"
+            android:text="Medical"
+            android:textColor="@color/appTextColor"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <ImageView
+
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:color="@color/black"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/capsules"></ImageView>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="20dp"
+        >
+        <EditText
+
+            android:layout_width="175dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="18dp"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:background="@drawable/backgroundbox"
+            android:hint="Add Limit"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"></EditText>
+
+
+        <TextView
+
+            android:layout_width="211dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="-8dp"
+
+            android:paddingLeft="0dp"
+            android:text="Electricity and Gas"
+            android:textColor="@color/appTextColor"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <ImageView
+
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:color="@color/black"
+            android:src="@drawable/chargingstation"></ImageView>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="20dp"
+        >
+        <EditText
+
+            android:layout_width="175dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="18dp"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:background="@drawable/backgroundbox"
+            android:hint="Add Limit"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"></EditText>
+
+
+        <TextView
+
+            android:layout_width="211dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="-8dp"
+
+            android:paddingLeft="0dp"
+            android:text="Entertainment"
+            android:textColor="@color/appTextColor"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <ImageView
+
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:color="@color/black"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/popcorn"></ImageView>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="20dp"
+        >
+        <EditText
+
+            android:layout_width="175dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="18dp"
+            android:layout_weight="1"
+            android:background="@drawable/backgroundbox"
+            android:hint="Add Limit"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:inputType="number"
+            android:textSize="14sp"></EditText>
+
+
+        <TextView
+
+            android:layout_width="211dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="-8dp"
+
+            android:paddingLeft="0dp"
+            android:text="Housing"
+            android:textColor="@color/appTextColor"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <ImageView
+
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:color="@color/black"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/flash"></ImageView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/categorybutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="70dp"
+        android:background="@drawable/limitbox"
+        android:fontFamily="@font/originalsurfer_regular"
+        android:text="ENTER"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

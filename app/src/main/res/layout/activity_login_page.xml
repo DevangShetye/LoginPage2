@@ -28,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAlignment="center"
-                android:text="EXPENSE  TRACKER"
+                android:text="EXPENSE  MANAGER"
                 android:fontFamily="@font/originalsurfer_regular"
                 android:textColor="@color/appTextColor"
                 android:textStyle="bold"
